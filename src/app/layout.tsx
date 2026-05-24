@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import AmbientBackground from "@/components/AmbientBackground";
 import ThemeProvider, { ModeToggle } from "@/components/providers/ThemeProvider";
 import CustomCursor from "@/components/CustomCursor";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 
 const spaceGroteskHeading = Space_Grotesk({subsets:['latin'],variable:'--font-heading'});
 
@@ -40,8 +41,12 @@ export default function RootLayout({
         <AmbientBackground />
         <CustomCursor />
         <ThemeProvider>
+          <AnimatedThemeToggler
+            className="fixed bottom-4 right-4 z-50"
+            variant="hexagon"
+            fromCenter
+          />
           {children}
-          <ModeToggle />
         </ThemeProvider>
       </body>
     </html>

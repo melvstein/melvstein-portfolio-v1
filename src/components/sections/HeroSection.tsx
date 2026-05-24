@@ -1,4 +1,7 @@
 import { ArrowRight } from "lucide-react"
+import { TypingAnimation } from "@/components/ui/typing-animation"
+import { AuroraText } from "@/components/ui/aurora-text"
+import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 
 const HeroSection = () => {
   return (
@@ -20,14 +23,37 @@ const TextContent = () => {
         </div>
         
         <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-          Hi, {"I'm"} <br />
-          <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent glow-shadow">
-            Melvin Justine
-          </span>
+          <DiaTextReveal
+            text="Hi, I'm"
+            colors={["var(--color-blue-400)", "var(--color-cyan-400)", "var(--color-purple-500)"]}
+          /> 
+          <br />
+          <AuroraText
+            colors={["var(--color-blue-400)", "var(--color-cyan-400)", "var(--color-purple-500)"]}
+          >
+            <TypingAnimation
+                words={[
+                  "Full-Stack Developer",
+                  "Melvin Justine",
+                ]}
+                loop={false}
+            />
+          </AuroraText>
         </h1>
         
         <p className="text-slate-400 text-lg md:text-xl max-w-xl leading-relaxed font-light">
-          I build high-performance web applications featuring immersive 3D graphics, fluid motion design, and stunning glassmorphism interfaces.
+          I build&nbsp;
+          <TypingAnimation
+            className="text-cyan-300 font-medium"
+            words={[
+              "high-performance web apps",
+              "immersive 3D experiences",
+              "fluid motion interfaces",
+              "stunning glass UIs",
+            ]}
+            typeSpeed={50}
+            loop
+          />
         </p>
         
         <div className="flex flex-wrap gap-4 pt-4">

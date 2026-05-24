@@ -123,7 +123,7 @@ const NavigationMenus = () => {
         {
           menus.map((menu) => (
             <NavigationMenuItem key={menu.title}>
-              <NavigationMenuLink asChild className="font-semibold hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1) active:bg-primary/30 active:hover:bg-primary/40 focus:bg-primary/30 focus:hover:bg-primary/40">
+              <NavigationMenuLink asChild className="font-semibold hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 active:bg-primary/30 active:hover:bg-primary/40 focus:bg-primary/30 focus:hover:bg-primary/40">
                 <Link href={menu.href} className="flex items-center">
                   {menu.title}
                 </Link>
@@ -141,7 +141,7 @@ const LetsConnect = () => {
   return (
     <Link
       href="#contact"
-      className="flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-primary/30 bg-primary/10 hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)"
+      className="flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-primary/30 bg-primary/10 hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)]"
     >
       {"Let's Connect"}
     </Link>
