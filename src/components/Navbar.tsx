@@ -3,7 +3,6 @@
 import Link from "next/link";
 import MelvsteinLogo from "@/assets/svgs/melvstein_logo.svg";
 import { Menu } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
 
 import {
   NavigationMenu,
@@ -50,7 +49,6 @@ const Navbar = () => {
     <nav className="fixed z-10 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 border-b border-primary">
         <Logo />
         <DesktopMenus />
-        <ThemeToggle />
         <MobileMenus />
     </nav>
   );
@@ -87,7 +85,6 @@ const MobileMenus = () => {
         </div>
         <SheetFooter className="flex flex-col gap-3">
           <LetsConnect />
-          <ThemeToggle />
         </SheetFooter>
       </SheetContent>
     </Sheet>
@@ -95,10 +92,21 @@ const MobileMenus = () => {
 };
 
 const Logo = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent("scroll-home"));
+      
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+    }
+  };
+
   return (
-    <Link href="/" className="flex items-center justify-center gap-2">
+    <Link href="/" onClick={handleClick} className="flex items-center justify-center gap-2">
       <MelvsteinLogo
-        className="w-9 h-9 fill-current text-primary"
+        className="w-7 h-7 fill-current text-primary"
       />
       <p className="font-heading text-xl font-bold tracking-wider bg-linear-to-r from-primary to-cyan-300 bg-clip-text text-transparent">
         MELVSTEIN.DEV
@@ -132,7 +140,7 @@ const NavigationMenus = () => {
 const LetsConnect = () => {
   return (
     <Link
-      href="#lets-connect"
+      href="#contact"
       className="flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-primary/30 bg-primary/10 hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)"
     >
       {"Let's Connect"}

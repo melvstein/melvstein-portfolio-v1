@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "tailwind-scrollbar";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -123,12 +124,28 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground cursor-none;
   }
   html {
     @apply font-sans;
   }
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body,
+    a,
+    button,
+    [role="button"],
+    input,
+    textarea,
+    select,
+    label {
+      cursor: none;
+    }
+  }
   .section-container {
     @apply min-h-screen w-full flex items-center justify-center relative px-6;
+  }
+  .skin-bg-gradient {
+    @apply bg-linear-to-r from-blue-500 to-cyan-400;
   }
 }
