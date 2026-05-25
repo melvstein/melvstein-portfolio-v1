@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/sections/HeroSection";
+import AboutSection from "@/components/sections/AboutSection";
 import Image from "next/image";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
@@ -118,7 +118,7 @@ export default function Home() {
         className="flex h-screen w-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth [&.can-drag]:cursor-grab [&.is-dragging]:cursor-grabbing [&.is-dragging]:snap-none [&.is-dragging]:scroll-auto [&.is-dragging]:select-none scrollbar scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-cyan-400"
       >
         <div data-drag-zone className="min-w-screen h-full shrink-0 snap-start">
-          <HeroSection />
+          <AboutSection />
         </div>
         <div data-drag-zone className="min-w-screen h-full shrink-0 snap-start">
           <ProjectsSection />
