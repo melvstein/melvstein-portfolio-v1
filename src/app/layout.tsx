@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import AmbientBackground from "@/components/AmbientBackground";
-import ThemeProvider, { ModeToggle } from "@/components/providers/ThemeProvider";
+import ThemeProvider from "@/components/providers/ThemeProvider";
 import CustomCursor from "@/components/CustomCursor";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 

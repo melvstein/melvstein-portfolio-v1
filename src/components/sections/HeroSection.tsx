@@ -1,11 +1,22 @@
 import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { AuroraText } from "@/components/ui/aurora-text"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
+import { FlickeringGrid } from "@/components/ui/flickering-grid"
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 
 const HeroSection = () => {
   return (
     <section className="section-container">
+      <FlickeringGrid
+        className="absolute inset-0 z-0 mask-[radial-gradient(450px_circle_at_center,white,transparent)]"
+        squareSize={4}
+        gridGap={6}
+        color="#60A5FA"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+      />
       <TextContent />
     </section>
   );
@@ -58,12 +69,19 @@ const TextContent = () => {
         
         <div className="flex flex-wrap gap-4 pt-4">
           <a href="#projects" className="group relative px-8 py-4 rounded-xl font-heading font-medium tracking-wide skin-bg-gradient text-slate-950 shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
-            Explore Work
+            <AnimatedShinyText className="text-slate-950!">Explore Work</AnimatedShinyText>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
-          <a href="#contact" className="px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-md">
-            Get in touch
-          </a>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="h-auto px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-white/5 border-white/10 text-white hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
+          >
+            <a href="#contact">
+              <AnimatedShinyText>Get in touch</AnimatedShinyText>
+            </a>
+          </Button>
         </div>
       </div>
     </div>

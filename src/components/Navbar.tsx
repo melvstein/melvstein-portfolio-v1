@@ -28,6 +28,11 @@ type Menu = {
 
 const menus: Menu[] = [
   {
+    title: "About",
+    href: "/",
+    description: ""
+  },
+  {
     title: "Projects",
     href: "#projects",
     description: "A collection of my projects, showcasing my skills and experience.",
@@ -46,7 +51,7 @@ const menus: Menu[] = [
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-10 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 border-b border-primary">
+    <nav className="fixed z-10 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 border-b border-primary bg-slate-950/10 backdrop-blur-sm">
         <Logo />
         <DesktopMenus />
         <MobileMenus />
