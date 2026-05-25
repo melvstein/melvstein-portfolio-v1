@@ -6,9 +6,9 @@ import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 
-const HeroSection = () => {
+const AboutSection = () => {
   return (
-    <section className="section-container">
+    <section id="about" className="section-container">
       <FlickeringGrid
         className="absolute inset-0 z-0 mask-[radial-gradient(450px_circle_at_center,white,transparent)]"
         squareSize={4}
@@ -22,7 +22,7 @@ const HeroSection = () => {
   );
 }
 
-export default HeroSection;
+export default AboutSection;
 
 const TextContent = () => {
   return (
