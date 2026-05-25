@@ -28,11 +28,6 @@ type Menu = {
 
 const menus: Menu[] = [
   {
-    title: "About",
-    href: "#about",
-    description: ""
-  },
-  {
     title: "Projects",
     href: "#projects",
     description: "A collection of my projects, showcasing my skills and experience.",
