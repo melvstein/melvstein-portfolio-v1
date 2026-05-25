@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/sections/AboutSection";
-import Image from "next/image";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
