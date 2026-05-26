@@ -1,7 +1,6 @@
 "use client";
 
 import { Pointer } from "./ui/pointer";
-import { SmoothCursor } from "@/components/ui/smooth-cursor"
 
 const CursorPointer = () => {
   return (
