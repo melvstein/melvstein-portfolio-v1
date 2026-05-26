@@ -6,6 +6,9 @@ import AmbientBackground from "@/components/AmbientBackground";
 import ThemeProvider from "@/components/providers/ThemeProvider";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import CursorPointer from "@/components/CursorPointer";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/AppSidebar";
+import AppNavbar from "@/components/AppNavbar";
 
 const spaceGroteskHeading = Space_Grotesk({subsets:['latin'],variable:'--font-heading'});
 
@@ -31,22 +34,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, spaceGroteskHeading.variable)}
+      className={cn("h-full", "scroll-smooth", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, spaceGroteskHeading.variable)}
       suppressHydrationWarning
     >
       <body className="min-h-screen w-full bg-background text-foreground selection:bg-primary/30 selection:text-blue-200 dark:selection:bg-primary/50 dark:selection:text-blue-200">
         <CursorPointer />
         <AmbientBackground />
         <ThemeProvider>
+          <SidebarProvider>
+          <AppSidebar />
+          <AppNavbar />
           <AnimatedThemeToggler
             className="fixed bottom-4 right-4 z-50"
             variant="hexagon"
             fromCenter
           />
           {children}
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
