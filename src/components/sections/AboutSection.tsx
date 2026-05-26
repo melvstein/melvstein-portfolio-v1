@@ -29,18 +29,18 @@ const TextContent = () => {
     <div id="hero" className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
       <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-left">
         <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full text-xs text-blue-400 font-medium tracking-wide w-fit backdrop-blur-sm">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
           <span>Available for New Projects</span>
         </div>
         
         <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
           <DiaTextReveal
             text="Hi, I'm"
-            colors={["var(--color-blue-400)", "var(--color-cyan-400)", "var(--color-purple-500)"]}
+            colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
           /> 
           <br />
           <AuroraText
-            colors={["var(--color-blue-400)", "var(--color-cyan-400)", "var(--color-purple-500)"]}
+            colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
           >
             <TypingAnimation
                 words={[
@@ -55,7 +55,7 @@ const TextContent = () => {
         <p className="text-slate-400 text-lg md:text-xl max-w-xl leading-relaxed font-light">
           I build&nbsp;
           <TypingAnimation
-            className="text-cyan-300 font-medium"
+            className="text-secondary font-medium"
             words={[
               "high-performance web apps",
               "immersive 3D experiences",

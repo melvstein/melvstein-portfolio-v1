@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MelvsteinLogo from "@/assets/svgs/melvstein_logo.svg";
 import { Menu } from "lucide-react";
+import { ScrollProgress } from "@/components/ui/scroll-progress"
 
 import {
   NavigationMenu,
@@ -28,6 +29,11 @@ type Menu = {
 
 const menus: Menu[] = [
   {
+    title: "About",
+    href: "#about",
+    description: "A brief introduction about me and my background.",
+  },
+  {
     title: "Projects",
     href: "#projects",
     description: "A collection of my projects, showcasing my skills and experience.",
@@ -46,10 +52,11 @@ const menus: Menu[] = [
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-10 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 border-b border-primary bg-slate-950/10 backdrop-blur-sm">
+    <nav className="fixed z-40 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 bg-slate-950/10 backdrop-blur-sm">
         <Logo />
         <DesktopMenus />
         <MobileMenus />
+        <ScrollProgress className="top-16.25 bg-linear-to-r from-primary via-secondary to-primary" />
     </nav>
   );
 }
@@ -92,23 +99,12 @@ const MobileMenus = () => {
 };
 
 const Logo = () => {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (window.location.pathname === "/") {
-      e.preventDefault();
-      window.dispatchEvent(new CustomEvent("scroll-home"));
-      
-      if (window.location.hash) {
-        window.history.replaceState(null, "", window.location.pathname);
-      }
-    }
-  };
-
   return (
-    <Link href="/" onClick={handleClick} className="flex items-center justify-center gap-2">
+    <Link href="#about" className="flex items-center justify-center gap-2">
       <MelvsteinLogo
         className="w-7 h-7 fill-current text-primary"
       />
-      <p className="font-heading text-xl font-bold tracking-wider bg-linear-to-r from-primary to-cyan-300 bg-clip-text text-transparent">
+      <p className="font-heading text-xl font-bold tracking-wider bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
         MELVSTEIN.DEV
       </p>
     </Link>
