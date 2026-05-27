@@ -3,7 +3,7 @@
 import Link from "next/link";
 import MelvsteinLogoSvg from "@/assets/svgs/melvstein_logo.svg";
 
-const Logo = () => {
+const Logo = ({ onClick }: { onClick?: () => void }) => {
   return (
     <Link
       href="/"
@@ -11,6 +11,7 @@ const Logo = () => {
         e.preventDefault();
         window.scrollTo({ top: 0 });
         window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        onClick?.();
       }}
       className="flex items-center justify-start md:justify-center gap-2"
     >

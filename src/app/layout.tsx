@@ -6,7 +6,7 @@ import AmbientBackground from "@/components/AmbientBackground";
 import ThemeProvider from "@/components/providers/ThemeProvider";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import CursorPointer from "@/components/CursorPointer";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar";
 import AppNavbar from "@/components/AppNavbar";
 

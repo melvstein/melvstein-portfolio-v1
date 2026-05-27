@@ -135,13 +135,14 @@ const NavigationMenus = () => {
   )
 };
 
-const LetsConnect = () => {
+const LetsConnect = ({ onClick }: { onClick?: () => void }) => {
   return (
     <Link
       href="#contact"
       onClick={(e) => {
         e.preventDefault();
         document.getElementById("contact")?.scrollIntoView();
+        onClick?.();
       }}
       className="flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-primary/30 bg-primary/10 hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)]"
     >
