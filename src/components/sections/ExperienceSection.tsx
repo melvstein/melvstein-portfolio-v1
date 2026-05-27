@@ -1,6 +1,6 @@
 const ExperienceSection = () => {
   return (
-    <section className="section-container">
+    <section id="experience" className="section-container">
       <AvailableForNewProjects />
     </section>
   );
@@ -10,7 +10,7 @@ export default ExperienceSection;
 
 const AvailableForNewProjects = () => {
   return (
-    <div id="experience" className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+    <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
       <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-left">
         <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full text-xs text-blue-400 font-medium tracking-wide w-fit backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
