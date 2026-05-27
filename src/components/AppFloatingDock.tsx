@@ -11,6 +11,8 @@ import {
 import Menus from "@/lib/Menus";
 import Link from "next/link";
 import { SidebarSeparator } from "./ui/sidebar";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 
 const DATA = {
   navbar: [
@@ -32,7 +34,7 @@ const AppFloatingDock = () => {
         <Dock direction="middle" className="bg-slate-950/10 backdrop-blur-sm border border-primary/20 rounded-full">
         {
           DATA.navbar.map((nav) => (
-            <DockIcon key={nav.name} className="bg-black/10 dark:bg-white/10">
+            <DockIcon key={nav.name}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
@@ -43,6 +45,10 @@ const AppFloatingDock = () => {
                       window.scrollTo({ top: 0 });
                       window.history.replaceState(null, "", window.location.pathname + window.location.search);
                     }}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full"
+                    )}
                   >
                     {nav.icon && <nav.icon className="size-4" />}
                   </Link>
@@ -57,7 +63,7 @@ const AppFloatingDock = () => {
           <SidebarSeparator orientation="vertical" />
         {
           DATA.social.map((social) => (
-            <DockIcon key={social.name} className="bg-black/10 dark:bg-white/10">
+            <DockIcon key={social.name}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
@@ -65,6 +71,10 @@ const AppFloatingDock = () => {
                     aria-label={social.name}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full"
+                    )}
                   >
                     {social.icon && <social.icon className="size-4" />}
                   </Link>
@@ -79,8 +89,15 @@ const AppFloatingDock = () => {
           <SidebarSeparator orientation="vertical" />
         {
           DATA.setting.map((setting) => (
-            <DockIcon key={setting.name} className="bg-black/10 dark:bg-white/10">
-              {setting.element}
+            <DockIcon key={setting.name}>
+              <p 
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "size-12 rounded-full"
+                )}
+              >
+                {setting.element}
+              </p>
             </DockIcon>
           ))
         }

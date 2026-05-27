@@ -16,10 +16,10 @@ import { SidebarCustomTrigger } from "./SidebarCustomTrigger"
 import { LetsConnect } from "./AppNavbar";
 import { Button } from "./ui/button";
 import Logo from "./Logo";
-import { Github, Linkedin } from "./SvgIcons";
 import Link from "next/link";
 import LINK from "@/lib/link";
 import Menus from "@/lib/Menus";
+import { Icons } from "./Icons";
 
 export function AppSidebar() {
   const { toggleSidebar, isMobile } = useSidebar()
@@ -58,12 +58,12 @@ export function AppSidebar() {
           <div className="flex items-center justify-center gap-4">
             <Button variant="ghost" size="icon-sm" className="hover:text-secondary skin-bg-gradient">
               <Link href={LINK.GITHUB} target="_blank" rel="noopener noreferrer">
-                <Github />
+                <Icons.github />
               </Link>
             </Button>
             <Button variant="ghost" size="icon-sm" className="hover:text-secondary skin-bg-gradient">
               <Link href={LINK.LINKEDIN} target="_blank" rel="noopener noreferrer">
-                <Linkedin />
+                <Icons.linkedin />
               </Link>
             </Button>
           </div>
