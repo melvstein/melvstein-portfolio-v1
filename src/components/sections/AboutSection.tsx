@@ -7,11 +7,11 @@ import { AuroraText } from "@/components/ui/aurora-text"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
-import Image from "next/image";
+import { AsciiArtBinarMelvstein } from "../aceternity/AsciiArtBinaryMelvstein";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-container">
+    <section id="about" className="section-container pt-28 lg:pt-0">
       <FlickeringGrid
         className="absolute inset-0 z-0 mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(450px_circle_at_center,white,transparent)]"
         squareSize={4}
@@ -21,13 +21,13 @@ const AboutSection = () => {
         flickerChance={0.1}
       />
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-left">
+        <div className="lg:col-span-7 flex flex-col items-center lg:items-start justify-center space-y-6 text-left">
           <div className="inline-flex items-center space-x-2 bg-primary/10 border border-secondary/20 px-3.5 py-1.5 rounded-full text-xs text-blue-400 font-medium tracking-wide w-fit backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
             <span>Available for New Projects</span>
           </div>
           
-          <h1 className="flex flex-col font-heading text-[45px] md:text-7xl font-bold tracking-tight leading-[1.1]">
+          <h1 className="flex flex-col items-center lg:items-start font-heading text-[45px] md:text-7xl font-bold tracking-tight leading-[1.1]">
             <DiaTextReveal
               text="Hi, I'm"
               colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
@@ -78,12 +78,7 @@ const AboutSection = () => {
           </div>
         </div>
         <div className="lg:col-span-5 relative w-full h-64 md:h-96">
-          <Image
-            src="/assets/images/melvstein_profile.jpg"
-            alt="Melvin Justine"
-            fill
-            className="object-cover rounded-xl border border-primary/20 shadow-lg"
-          />
+          <AsciiArtBinarMelvstein />
         </div>
       </div>
     </section>

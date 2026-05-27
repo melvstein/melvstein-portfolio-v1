@@ -21,35 +21,7 @@ import {
 } from "@/components/ui/sheet";
 import { SidebarCustomTrigger } from "./SidebarCustomTrigger";
 import Logo from "./Logo";
-
-type Menu = {
-  name: string;
-  href: string;
-  description: string;
-};
-
-const menus: Menu[] = [
-  {
-    name: "About",
-    href: "/",
-    description: "A brief introduction about me and my background.",
-  },
-  {
-    name: "Projects",
-    href: "#projects",
-    description: "A collection of my projects, showcasing my skills and experience.",
-  },
-  {
-    name: "Skills",
-    href: "#skills",
-    description: "A list of my technical skills and proficiencies.",
-  },
-  {
-    name: "Experience",
-    href: "#experience",
-    description: "A summary of my work experience and professional background.",
-  }
-];
+import Menus from "@/lib/Menus";
 
 const AppNavbar = () => {
   return (
@@ -108,7 +80,7 @@ const NavigationMenus = () => {
       <NavigationMenuList className="flex flex-col md:flex-row items-start md:items-center justify-start">
 
         {
-          menus.map((menu) => (
+          Object.values(Menus.navigation).map((menu) => (
             <NavigationMenuItem key={menu.name}>
               <NavigationMenuLink
                 href={menu.href}
@@ -135,7 +107,7 @@ const NavigationMenus = () => {
   )
 };
 
-const LetsConnect = ({ onClick }: { onClick?: () => void }) => {
+export const LetsConnect = ({ onClick }: { onClick?: () => void }) => {
   return (
     <Link
       href="#contact"
@@ -150,8 +122,3 @@ const LetsConnect = ({ onClick }: { onClick?: () => void }) => {
     </Link>
   );
 };
-
-export {
-  menus,
-  LetsConnect
-}

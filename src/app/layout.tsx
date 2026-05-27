@@ -9,6 +9,7 @@ import CursorPointer from "@/components/CursorPointer";
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar";
 import AppNavbar from "@/components/AppNavbar";
+import AppFloatingDock from "@/components/AppFloatingDock";
 
 const spaceGroteskHeading = Space_Grotesk({subsets:['latin'],variable:'--font-heading'});
 
@@ -46,14 +47,10 @@ export default function RootLayout({
         <AmbientBackground />
         <ThemeProvider>
           <SidebarProvider>
-          <AppSidebar />
-          <AppNavbar />
-          <AnimatedThemeToggler
-            className="fixed bottom-4 right-4 z-50"
-            variant="hexagon"
-            fromCenter
-          />
-          {children}
+            <AppSidebar />
+            <AppNavbar />
+            {children}
+            <AppFloatingDock />
           </SidebarProvider>
         </ThemeProvider>
       </body>

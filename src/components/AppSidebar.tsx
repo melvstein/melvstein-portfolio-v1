@@ -13,12 +13,13 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 import { SidebarCustomTrigger } from "./SidebarCustomTrigger"
-import { LetsConnect, menus } from "./AppNavbar";
+import { LetsConnect } from "./AppNavbar";
 import { Button } from "./ui/button";
 import Logo from "./Logo";
 import { Github, Linkedin } from "./SvgIcons";
 import Link from "next/link";
-import LINK from "@/constants/link";
+import LINK from "@/lib/link";
+import Menus from "@/lib/Menus";
 
 export function AppSidebar() {
   const { toggleSidebar, isMobile } = useSidebar()
@@ -39,7 +40,7 @@ export function AppSidebar() {
         <SidebarSeparator />
         <SidebarContent>
           <SidebarMenu>
-            {menus.map((menu) => (
+            {Object.values(Menus.navigation).map((menu) => (
               <SidebarMenuItem key={menu.name}>
                 <SidebarMenuButton asChild>
                   <a href={menu.href} onClick={toggleSidebar}>

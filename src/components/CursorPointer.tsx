@@ -4,7 +4,7 @@ import { Pointer } from "./ui/pointer";
 
 const CursorPointer = () => {
   return (
-      <Pointer className="hidden md:flex fill-blue-500 z-60 hover:cursor-crosshair!" />
+      <Pointer className="flex fill-secondary stroke-primary z-60" />
   )
   };
 
