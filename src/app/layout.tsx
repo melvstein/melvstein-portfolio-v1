@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "scroll-smooth", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, spaceGroteskHeading.variable)}
+      className={cn("overflow-auto scroll-smooth scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, spaceGroteskHeading.variable)}
       suppressHydrationWarning
     >
       <body className="min-h-screen w-full bg-background text-foreground selection:bg-primary/30 selection:text-blue-200 dark:selection:bg-primary/50 dark:selection:text-blue-200">

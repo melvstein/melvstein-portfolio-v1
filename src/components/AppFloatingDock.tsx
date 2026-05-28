@@ -31,10 +31,10 @@ const AppFloatingDock = () => {
   return (
     <div className="fixed bottom-4 flex items-center justify-center w-full z-50">
       <TooltipProvider>
-        <Dock direction="middle" className="bg-slate-950/10 backdrop-blur-sm border border-primary/20 rounded-full">
+        <Dock direction="middle" className="bg-slate-950/10 backdrop-blur-sm border border-primary/20">
         {
           DATA.navbar.map((nav) => (
-            <DockIcon key={nav.name}>
+            <DockIcon key={nav.name} className="hover:bg-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
@@ -42,15 +42,17 @@ const AppFloatingDock = () => {
                     aria-label={nav.name}
                     onClick={(e) => {
                       e.preventDefault();
-                      window.scrollTo({ top: 0 });
-                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                      if (nav.href === "/") {
+                        window.scrollTo({ top: 0 });
+                        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                      }
                     }}
                     className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      buttonVariants({ variant: "ghost" }),
+                      "size-12 rounded-full hover:bg-primary!"
                     )}
                   >
-                    {nav.icon && <nav.icon className="size-4" />}
+                    {nav.icon && <nav.icon />}
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -63,7 +65,7 @@ const AppFloatingDock = () => {
           <SidebarSeparator orientation="vertical" />
         {
           DATA.social.map((social) => (
-            <DockIcon key={social.name}>
+            <DockIcon key={social.name} className="hover:bg-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
@@ -73,7 +75,7 @@ const AppFloatingDock = () => {
                     rel="noopener noreferrer"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full hover:bg-primary!"
                     )}
                   >
                     {social.icon && <social.icon className="size-4" />}
@@ -89,11 +91,11 @@ const AppFloatingDock = () => {
           <SidebarSeparator orientation="vertical" />
         {
           DATA.setting.map((setting) => (
-            <DockIcon key={setting.name}>
+            <DockIcon key={setting.name} className="hover:bg-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
               <p 
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "icon" }),
-                  "size-12 rounded-full"
+                  "size-12 rounded-full hover:bg-primary!"
                 )}
               >
                 {setting.element}

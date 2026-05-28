@@ -11,7 +11,7 @@ import { AsciiArtBinarMelvstein } from "../aceternity/AsciiArtBinaryMelvstein";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-container pt-28 lg:pt-0">
+    <section id="about" className="section-container">
       <FlickeringGrid
         className="absolute inset-0 z-0 mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(450px_circle_at_center,white,transparent)]"
         squareSize={4}
