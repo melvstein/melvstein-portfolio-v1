@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import AmbientBackground from "@/components/AmbientBackground";
 import ThemeProvider from "@/components/providers/ThemeProvider";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import CursorPointer from "@/components/CursorPointer";
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar";
@@ -44,7 +42,6 @@ export default function RootLayout({
     >
       <body className="min-h-screen w-full bg-background text-foreground selection:bg-primary/30 selection:text-blue-200 dark:selection:bg-primary/50 dark:selection:text-blue-200">
         <CursorPointer />
-        <AmbientBackground />
         <ThemeProvider>
           <SidebarProvider>
             <AppSidebar />

@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/sheet";
 import { SidebarCustomTrigger } from "./SidebarCustomTrigger";
 import Logo from "./Logo";
-import Menus from "@/lib/Menus";
+import Menus from "@/data/Menus";
 
 const AppNavbar = () => {
   return (

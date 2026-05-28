@@ -18,7 +18,7 @@ import { Button } from "./ui/button";
 import Logo from "./Logo";
 import Link from "next/link";
 import LINK from "@/lib/link";
-import Menus from "@/lib/Menus";
+import Menus from "@/data/Menus";
 import { Icons } from "./Icons";
 
 export function AppSidebar() {

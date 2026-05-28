@@ -1,7 +1,7 @@
 import { Icons } from "@/components/Icons";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { HomeIcon } from "lucide-react"
-import LINK from "./link";
+import LINK from "../lib/link";
 
 export type Menu = {
   href: string;

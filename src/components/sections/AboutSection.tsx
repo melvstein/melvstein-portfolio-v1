@@ -8,6 +8,7 @@ import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 import { AsciiArtBinarMelvstein } from "../aceternity/AsciiArtBinaryMelvstein";
+import { Terminal } from "@/components/ui/terminal";
 
 const AboutSection = () => {
   return (
@@ -32,17 +33,14 @@ const AboutSection = () => {
               text="Hi, I'm"
               colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
             />
-            <AuroraText
-              colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
-            >
-              <TypingAnimation
+            <TypingAnimation
+                className="block w-full text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadowext-secondary tracking-tighter"
                   words={[
                     "Full-Stack Dev",
                     "Melvin Justine",
                   ]}
                   loop={false}
-              />
-            </AuroraText>
+            />
           </h1>
           
           <p className="text-slate-400 text-md md:text-xl max-w-xl leading-relaxed font-light">

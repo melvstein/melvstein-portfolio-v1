@@ -8,7 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import Menus from "@/lib/Menus";
+import Menus from "@/data/Menus";
 import Link from "next/link";
 import { SidebarSeparator } from "./ui/sidebar";
 import { cn } from "@/lib/utils";
