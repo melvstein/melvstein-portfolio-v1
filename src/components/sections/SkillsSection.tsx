@@ -23,14 +23,8 @@ const orbitProps: Record<
 const SkillsSection = () => {
   return (
     <section id="skills" className="section-container">
-      <NoiseTexture
-        className={cn(
-          "absolute inset-0",
-          "mask-[radial-gradient(420px_circle_at_center,white,transparent)]"
-        )}
-      />
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 z-10">
-        <div>
+      <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="relative flex items-center justify-center w-full h-full">
           <Terminal
             username="melvstein"
             commands={[
@@ -49,10 +43,10 @@ const SkillsSection = () => {
             }}
             typingSpeed={45}
             delayBetweenCommands={1000}
-            enableSound={true}
+            enableSound={false}
           />
         </div>
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center w-full h-full">
           {(Object.entries(Skills) as [keyof typeof Skills, typeof Skills[keyof typeof Skills]][]).map(([category, items]) => (
             <OrbitingCircles key={category} {...orbitProps[category]}>
               {Object.values(items).map((item) => {
@@ -74,6 +68,13 @@ const SkillsSection = () => {
           ))}
         </div>
       </div>
+
+      <NoiseTexture
+        className={cn(
+          "absolute inset-0",
+          "mask-[radial-gradient(420px_circle_at_center,white,transparent)]"
+        )}
+      />
     </section>
   );
 }

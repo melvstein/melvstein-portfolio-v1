@@ -3,12 +3,12 @@
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/ui/typing-animation"
-import { AuroraText } from "@/components/ui/aurora-text"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
-import { AsciiArtBinarMelvstein } from "../aceternity/AsciiArtBinaryMelvstein";
-import { Terminal } from "@/components/ui/terminal";
+import Image from "next/image";
+import { NeonGradientCard } from "@/components/ui/neon-gradient-card"
+import { LightRays } from "../ui/light-rays";
 
 const AboutSection = () => {
   return (
@@ -28,16 +28,19 @@ const AboutSection = () => {
             <span>Available for New Projects</span>
           </div>
           
-          <h1 className="flex flex-col items-center lg:items-start font-heading text-[45px] md:text-7xl font-bold tracking-tight leading-[1.1]">
+          <h1 className="flex flex-col items-center lg:items-start font-heading text-[45px] font-bold tracking-tight leading-[1.1]">
             <DiaTextReveal
               text="Hi, I'm"
               colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
             />
+            <DiaTextReveal
+              text="Melvin Justine"
+              colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
+            />
             <TypingAnimation
-                className="block w-full text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadowext-secondary tracking-tighter"
+                className="block w-full md:text-7xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter"
                   words={[
-                    "Full-Stack Dev",
-                    "Melvin Justine",
+                    "Full-Stack Developer",
                   ]}
                   loop={false}
             />
@@ -59,24 +62,47 @@ const AboutSection = () => {
           </p>
           
           <div className="flex flex-wrap items-center justify-between sm:justify-start gap-2 md:gap-4 pt-4">
-            <a href="#projects" className="group relative px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide skin-bg-gradient text-slate-950 shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
-              <AnimatedShinyText className="text-slate-950!">Explore Work</AnimatedShinyText>
+            <a href="#projects" className="group relative px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide skin-bg-gradient text-primary-foreground shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+              Explore Work
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-white hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
+              className="h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
             >
               <a href="#contact">
-                <AnimatedShinyText>Get in touch</AnimatedShinyText>
+                Get in touch
               </a>
             </Button>
           </div>
         </div>
-        <div className="lg:col-span-5 relative w-full h-64 md:h-96">
-          <AsciiArtBinarMelvstein />
+        <div className="lg:col-span-5 relative w-full h-64 md:h-96 flex items-center justify-center">
+          <NeonGradientCard
+            className="relative flex items-center justify-center"
+            neonColors = {{
+              firstColor: "var(--secondary)",
+              secondColor: "var(--primary)",
+            }}
+          >
+            <LightRays color="rgba(59, 130, 246, 1)" />
+            <FlickeringGrid
+              className="absolute inset-0 z-0 mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(450px_circle_at_center,white,transparent)]"
+              squareSize={4}
+              gridGap={6}
+              color="#60A5FA"
+              maxOpacity={0.5}
+              flickerChance={0.1}
+            />
+            <Image 
+              src="/images/melvstein_cross_arm.png"
+              alt="Melvin Justine"
+              className="absolute inset-0 w-full h-full object-cover -scale-x-100 grayscale-25"
+              height={500}
+              width={500}
+            />
+          </NeonGradientCard>
         </div>
       </div>
     </section>

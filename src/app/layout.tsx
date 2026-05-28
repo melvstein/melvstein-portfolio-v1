@@ -3,11 +3,11 @@ import { Geist, Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/components/providers/ThemeProvider";
-import CursorPointer from "@/components/CursorPointer";
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar";
 import AppNavbar from "@/components/AppNavbar";
 import AppFloatingDock from "@/components/AppFloatingDock";
+import CustomCursor from "@/components/CustomCursor";
 
 const spaceGroteskHeading = Space_Grotesk({subsets:['latin'],variable:'--font-heading'});
 
@@ -41,7 +41,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen w-full bg-background text-foreground selection:bg-primary/30 selection:text-blue-200 dark:selection:bg-primary/50 dark:selection:text-blue-200">
-        <CursorPointer />
+        <CustomCursor />
         <ThemeProvider>
           <SidebarProvider>
             <AppSidebar />

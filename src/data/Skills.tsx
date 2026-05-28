@@ -14,6 +14,10 @@ const Skills = {
             name: "Codeigniter",
             icon: Icons.codeigniter,
         },
+        docker: {
+            name: "Docker",
+            icon: Icons.docker,
+        },
     },
     frontend: {
         nextjs: {
@@ -31,6 +35,10 @@ const Skills = {
         threejs: {
             name: "Threejs",
             icon: Icons.threejs,
+        },
+        typescript: {
+            name: "TypeScript",
+            icon: Icons.typescript,
         },
         tailwindcss: {
             name: "Tailwindcss",

@@ -41,7 +41,7 @@ export default function CustomCursor() {
   return (
     <>
       <div
-        className="pointer-events-none fixed left-0 top-0 z-9999 rounded-full border border-blue-400/70 backdrop-blur-[1px] transition-[width,height,transform,background-color] duration-200 ease-out"
+        className="pointer-events-none fixed left-0 top-0 z-9999 rounded-full border border-blue-400/70 transition-[width,height,transform,background-color] duration-200 ease-out"
         style={{
           width: ringSize,
           height: ringSize,

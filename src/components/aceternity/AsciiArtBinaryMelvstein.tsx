@@ -2,10 +2,10 @@
 
 import { AsciiArt } from "@/components/ui/ascii-art";
 
-export function AsciiArtBinarMelvstein() {
+export function AsciiArtBinaryMelvstein() {
   return (
     <AsciiArt
-      src="/assets/images/melvstein_profile.jpg"
+      src="/images/melvstein_profile.jpg"
       resolution={80}
       charset="binary"
       color="#3b82f6"
