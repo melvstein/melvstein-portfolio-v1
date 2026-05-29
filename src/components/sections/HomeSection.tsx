@@ -3,7 +3,6 @@
 import { ArrowRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/ui/typing-animation"
-import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { ScrollVelocityContainer, ScrollVelocityRow } from "@/components/ui/scroll-based-velocity";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card"
