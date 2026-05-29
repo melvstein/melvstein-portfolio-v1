@@ -1,14 +1,16 @@
 "use client";
 
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
-import Image from "next/image";
+import { ScrollVelocityContainer, ScrollVelocityRow } from "@/components/ui/scroll-based-velocity";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card"
 import { LightRays } from "../ui/light-rays";
+import LINK from "@/lib/link";
 import Link from "next/link";
+import Image from "next/image";
 
 const HomeSection = () => {
   return (
@@ -21,6 +23,14 @@ const HomeSection = () => {
         maxOpacity={0.5}
         flickerChance={0.1}
       />
+      <ScrollVelocityContainer className="absolute -skew-y-6 text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20 z-0 text-foreground/10">
+        <ScrollVelocityRow baseVelocity={10} direction={1}>
+          Full-Stack Developer&nbsp;
+        </ScrollVelocityRow>
+        <ScrollVelocityRow baseVelocity={10} direction={-1}>
+          Full-Stack Developer&nbsp;
+        </ScrollVelocityRow>
+      </ScrollVelocityContainer>
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start justify-center space-y-6 text-left">
           <div className="inline-flex items-center space-x-2 bg-primary/10 border border-secondary/20 px-3.5 py-1.5 rounded-full text-xs text-blue-400 font-medium tracking-wide w-fit backdrop-blur-sm">
@@ -29,18 +39,14 @@ const HomeSection = () => {
           </div>
           
           <h1 className="flex flex-col items-center lg:items-start font-heading text-[45px] font-bold tracking-tight leading-[1.1]">
-            <DiaTextReveal
-              text="Hi, I'm"
-              colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
-            />
-            <DiaTextReveal
-              text="Melvin Justine"
-              colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
-            />
+            <p className="flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-4 text-3xl md:text-4xl">
+              <span>{ "Hi, I'm" }</span>
+              <span className="text-primary uppercase">{ "Melvin Justine" }</span>
+            </p>
             <TypingAnimation
-                className="block w-full md:text-7xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[1.1]"
+                className="block w-full text-3xl md:text-6xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[1.7]"
                   words={[
-                    "Full-Stack Developer",
+                    "<FullStackDeveloper/>",
                   ]}
                   loop={false}
             />
@@ -66,6 +72,17 @@ const HomeSection = () => {
               Explore Work
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
+            >
+              <Link href={LINK.RESUME} target="_blank" rel="noopener noreferrer" download>
+                <Download className="w-4 h-4 mr-2" />
+                Resume
+              </Link>
+            </Button>
             <Button
               asChild
               variant="outline"

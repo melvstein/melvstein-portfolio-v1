@@ -1,82 +1,108 @@
 "use client";
 
-import { OrbitingCircles } from "@/components/ui/orbiting-circles"
-import { Terminal } from "../ui/terminal";
+import { Marquee } from "../ui/marquee";
 import { cn } from "@/lib/utils";
-import { NoiseTexture } from "../ui/noise-texture";
 import Skills from "@/data/Skills";
 
-const skillsOutput = Object.entries(Skills).flatMap(([category, items]) => [
-  category.charAt(0).toUpperCase() + category.slice(1),
-  ...Object.values(items).map((item) => `- ${item.name}`),
-]);
-
-const orbitProps: Record<
-  keyof typeof Skills,
-  React.ComponentProps<typeof OrbitingCircles>
-> = {
-  backend: { iconSize: 40 },
-  frontend: { iconSize: 30, radius: 100, reverse: true, speed: 2 },
-  database: { iconSize: 20, radius: 50, speed: 2 },
+const categoryAccents: Record<keyof typeof Skills, { glow: string; label: string; border: string }> = {
+  backend: {
+    glow: "from-primary/20 to-transparent",
+    label: "text-primary",
+    border: "hover:border-primary/30",
+  },
+  frontend: {
+    glow: "from-secondary/20 to-transparent",
+    label: "text-secondary",
+    border: "hover:border-secondary/30",
+  },
+  database: {
+    glow: "from-accent/20 to-transparent",
+    label: "text-accent",
+    border: "hover:border-accent/30",
+  },
 };
 
 const SkillsSection = () => {
   return (
     <section id="skills" className="section-container">
-      <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div className="relative flex items-center justify-center w-full h-full">
-          <Terminal
-            username="melvstein"
-            commands={[
-              "sudo show fullname",
-              "sudo show role",
-              "sudo show skills",
-            ]}
-            outputs={{
-              0: [
-                "Melvin Justine L. Bayogo",
-              ],
-              1: [
-                  "Full-Stack Developer",
-                ],
-              2: skillsOutput,
-            }}
-            typingSpeed={45}
-            delayBetweenCommands={1000}
-            enableSound={false}
-          />
+      <div className="max-w-7xl mx-auto w-full relative z-10 md:pt-15">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Toolkit</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold">Skills &amp; Stack</h2>
+          </div>
+          <p className="text-slate-400 max-w-md text-sm md:text-base font-light">
+            The languages, frameworks, and platforms I reach for when shipping production work.
+          </p>
         </div>
-        <div className="relative flex items-center justify-center w-full h-full">
-          {(Object.entries(Skills) as [keyof typeof Skills, typeof Skills[keyof typeof Skills]][]).map(([category, items]) => (
-            <OrbitingCircles key={category} {...orbitProps[category]}>
-              {Object.values(items).map((item) => {
-                const Icon = item.icon;
-                let className = "";
-            
-                switch (item.name) {
-                  case Skills.frontend.nextjs.name:
-                    className = "dark:fill-white";
-                    break;
-                  case Skills.frontend.threejs.name:
-                    className = "dark:fill-white";
-                    break;
-                }
-                
-                return <Icon key={item.name} className={className} />;
-              })}
-            </OrbitingCircles>
-          ))}
+
+        <div className="grid grid-cols-1 gap-4">
+          {(Object.entries(Skills) as [keyof typeof Skills, typeof Skills[keyof typeof Skills]][]).map(
+            ([category, items], idx) => {
+              const accent = categoryAccents[category];
+              const skillItems = Object.values(items);
+              return (
+                <div
+                  key={category}
+                  className={cn(
+                    "group relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-md overflow-hidden transition-all duration-500",
+                    accent.border
+                  )}
+                >
+                  <div
+                    className={cn(
+                      "absolute inset-0 bg-linear-to-br opacity-60 pointer-events-none",
+                      accent.glow
+                    )}
+                  />
+                  <div className="relative p-4 md:p-6 space-y-3">
+                    <div className="flex items-baseline justify-between">
+                      <h3
+                        className={cn(
+                          "text-xs font-heading font-bold tracking-widest uppercase",
+                          accent.label
+                        )}
+                      >
+                        {category}
+                      </h3>
+                      <span className="text-[10px] font-mono text-slate-500">
+                        {skillItems.length} items
+                      </span>
+                    </div>
+                    <Marquee
+                      pauseOnHover
+                      reverse={idx % 2 === 1}
+                      className="[--duration:25s]"
+                    >
+                      {skillItems.map((item) => {
+                        const Icon = item.icon;
+                        const iconClass =
+                          item.name === Skills.frontend.nextjs.name ||
+                          item.name === Skills.frontend.threejs.name
+                            ? "dark:fill-white"
+                            : "";
+                        return (
+                          <div
+                            key={item.name}
+                            className="flex flex-col items-center justify-center gap-2 w-24 h-24 shrink-0 rounded-lg border border-primary/10 bg-foreground/10 hover:bg-primary/70 hover:border-secondary/20 transition-colors"
+                          >
+                            <Icon className={cn("w-8 h-8", iconClass)} />
+                            <span className="text-[10px] font-mono text-foreground text-center px-1 truncate max-w-full">
+                              {item.name}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </Marquee>
+                  </div>
+                </div>
+              );
+            }
+          )}
         </div>
       </div>
-
-      <NoiseTexture
-        className={cn(
-          "absolute inset-0",
-          "mask-[radial-gradient(420px_circle_at_center,white,transparent)]"
-        )}
-      />
     </section>
   );
-}
+};
 
 export default SkillsSection;

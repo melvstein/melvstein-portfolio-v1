@@ -115,8 +115,8 @@ const defaultTechStyle = "bg-white/10 text-slate-300 border-white/20";
 const ProjectsSection = () => {
   return (
     <section id="projects" className="section-container">
-      <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 pt-28">
+      <div className="max-w-7xl mx-auto w-full relative z-10 md:pt-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Featured Work</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">Selected Projects</h2>
@@ -132,9 +132,9 @@ const ProjectsSection = () => {
             return (
               <div
                 key={project.name}
-                className={`group relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-md overflow-hidden transition-all duration-500 ${accent.border} ${accent.shadow}`}
+                className={`group relative backdrop-blur-xl bg-foreground/5 border border-primary/10 rounded-md overflow-hidden transition-all duration-500 ${accent.border} ${accent.shadow}`}
               >
-                <div className="aspect-video w-full overflow-hidden bg-slate-900 relative">
+                <div className="aspect-video w-full overflow-hidden bg-foreground relative">
                   <div className={`absolute inset-0 bg-linear-to-tr ${accent.gradient} flex items-center justify-center p-8`}>
                     <div className="relative w-full h-full overflow-hidden flex flex-col shadow-2xl">
                       <div className="flex-1 flex flex-col justify-center items-center text-center">

@@ -8,6 +8,7 @@ import { AppSidebar } from "@/components/AppSidebar";
 import AppNavbar from "@/components/AppNavbar";
 import AppFloatingDock from "@/components/AppFloatingDock";
 import CustomCursor from "@/components/CustomCursor";
+import AmbientBackground from "@/components/AmbientBackground";
 
 const spaceGroteskHeading = Space_Grotesk({subsets:['latin'],variable:'--font-heading'});
 
@@ -41,6 +42,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen w-full bg-background text-foreground selection:bg-primary/30 selection:text-blue-200 dark:selection:bg-primary/50 dark:selection:text-blue-200">
+        <AmbientBackground />
         <CustomCursor />
         <ThemeProvider>
           <SidebarProvider>
