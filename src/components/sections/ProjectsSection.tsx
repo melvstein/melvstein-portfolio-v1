@@ -25,7 +25,7 @@ type Project = {
 const Data: Project[] = [
   {
     name: "3D Solar System",
-    description: "An interactive 3D solar system simulation built with React Three Fiber, featuring custom shaders, realistic orbital mechanics, and responsive design.",
+    description: "An interactive 3D solar system simulation built with React Three Fiber, featuring custom shaders, realistic orbital mechanics, and responsive design. The backend, built with Springboot and PostgreSQL, provides REST APIs for dynamic content management and user interactions.",
     href: "https://r3f-solar-system-ten.vercel.app/",
     github: "https://github.com/melvstein/r3f-solar-system",
     videoSrc: "/videos/solar-system.mov",
@@ -35,7 +35,7 @@ const Data: Project[] = [
   },
   {
     name: "MJ Store",
-    description: "An e-commerce platform built with Next.js and Tailwind CSS, featuring a responsive design, dynamic product pages, and seamless checkout experience.",
+    description: "An e-commerce platform built with Next.js and Tailwind CSS, featuring a responsive design, dynamic product pages, and seamless checkout experience. The backend, built with Springboot and MongoDB, provides REST APIs for product management and order processing.",
     href: "https://mj-store-eight.vercel.app/",
     github: "https://github.com/melvstein/mj-store",
     videoSrc: "/videos/mj-store.mov",
@@ -54,7 +54,7 @@ const Data: Project[] = [
   },
   {
     name: "Alice in One-derland",
-    description: "A whimsical 3D web experience built with React Three Fiber, featuring a surreal landscape inspired by Alice in Wonderland, complete with interactive elements and responsive design.",
+    description: "A whimsical 3D web experience built with React Three Fiber, book style layout, and interactive animations.",
     href: "https://alice-in-1derland.vercel.app/",
     github: "https://github.com/melvstein/alice-in-1derland",
     videoSrc: "/videos/alice-in-1derland.mov",
@@ -154,10 +154,22 @@ const ProjectsSection = () => {
                     </Lens>
                   </CardHeader>
                   <CardContent className="flex-1">
-                    <CardTitle className="text-2xl">{project.name}</CardTitle>
+                    <CardTitle className={`font-heading text-2xl font-bold transition-colors ${accent.title}`}>
+                      {project.name}
+                    </CardTitle>
                     <CardDescription>
                       {project.description}
                     </CardDescription>
+                    <div className="flex flex-wrap pt-4 gap-2">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className={`text-[10px] font-heading font-semibold uppercase tracking-wider px-2.5 py-1 border rounded-full ${techStackStyles[tech] ?? defaultTechStyle}`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </CardContent>
                   <CardFooter className="space-x-4">
                     <Link href={project.href} target="_blank" className={`p-3 rounded-full ${accent.button} text-foreground hover:scale-110 transition-transform`}>
