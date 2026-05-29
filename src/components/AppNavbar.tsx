@@ -25,7 +25,7 @@ import Menus from "@/data/Menus";
 
 const AppNavbar = () => {
   return (
-    <nav className="fixed z-40 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 bg-slate-950/10 backdrop-blur-sm">
+    <nav className="fixed z-40 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 bg-slate-950/10 backdrop-blur-sm border-b border-primary/20">
         <Logo />
         <DesktopMenus />
         <MobileSidebarMenus />

@@ -43,9 +43,9 @@ export function AppSidebar() {
             {Object.values(Menus.navigation).map((menu) => (
               <SidebarMenuItem key={menu.name}>
                 <SidebarMenuButton asChild>
-                  <a href={menu.href} onClick={toggleSidebar}>
+                  <Link href={menu.href} onClick={toggleSidebar}>
                     <span>{menu.name}</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
                 <SidebarSeparator />
               </SidebarMenuItem>

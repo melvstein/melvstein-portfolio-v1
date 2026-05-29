@@ -17,6 +17,7 @@ import {
 } from "motion/react";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 
 export const FloatingDock = ({
   items,
@@ -68,13 +69,11 @@ const FloatingDockMobile = ({
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
-                <a
-                  href={item.href}
-                  key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
-                >
-                  <div className="h-4 w-4">{item.icon}</div>
-                </a>
+                <Link href={item.href} key={item.title}>
+                  <Link href={""} className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900">
+                    <div className="h-4 w-4">{item.icon}</div>
+                  </Link>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
@@ -168,7 +167,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <Link href={href}>
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -195,6 +194,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </a>
+    </Link>
   );
 }
