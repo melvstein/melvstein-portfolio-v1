@@ -22,14 +22,6 @@ const HomeSection = () => {
         maxOpacity={0.5}
         flickerChance={0.1}
       />
-      <ScrollVelocityContainer className="absolute -skew-y-6 text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20 z-0 text-foreground/10">
-        <ScrollVelocityRow baseVelocity={10} direction={1}>
-          Full-Stack Developer&nbsp;
-        </ScrollVelocityRow>
-        <ScrollVelocityRow baseVelocity={10} direction={-1}>
-          Full-Stack Developer&nbsp;
-        </ScrollVelocityRow>
-      </ScrollVelocityContainer>
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start justify-center space-y-6 text-left">
           <div className="inline-flex items-center space-x-2 bg-primary/10 border border-secondary/20 px-3.5 py-1.5 rounded-full text-xs text-blue-400 font-medium tracking-wide w-fit backdrop-blur-sm">
@@ -43,11 +35,11 @@ const HomeSection = () => {
               <span className="text-primary uppercase">{ "Melvin Justine" }</span>
             </p>
             <TypingAnimation
-                className="block w-full text-3xl md:text-6xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[1.7]"
-                  words={[
-                    "<FullStackDeveloper/>",
-                  ]}
-                  loop={false}
+              className="block w-full text-4xl md:text-6xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[2.5]"
+              words={[
+                "<FullStackDeveloper/>",
+              ]}
+              loop={false}
             />
           </h1>
           
@@ -94,7 +86,7 @@ const HomeSection = () => {
             </Button>
           </div>
         </div>
-        <div className="lg:col-span-5 relative w-full h-64 md:h-96 flex items-center justify-center">
+        <div className="relative lg:col-span-5 w-full h-64 md:h-96 flex items-center justify-center">
           <NeonGradientCard
             className="relative flex items-center justify-center"
             neonColors = {{
@@ -112,6 +104,14 @@ const HomeSection = () => {
               maxOpacity={0.5}
               flickerChance={0.1}
             />
+            <ScrollVelocityContainer className="absolute inset-0 font-heading flex flex-col justify-center -skew-y-6 text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20 z-0 text-foreground/60">
+              <ScrollVelocityRow baseVelocity={5} direction={1}>
+                Full-Stack Developer&nbsp;
+              </ScrollVelocityRow>
+              <ScrollVelocityRow baseVelocity={5} direction={-1} className="">
+                Full-Stack Developer&nbsp;
+              </ScrollVelocityRow>
+            </ScrollVelocityContainer>
             <Image 
               src="/images/melvstein_cross_arm.png"
               alt="Melvin Justine"

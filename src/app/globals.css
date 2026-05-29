@@ -211,7 +211,7 @@
     @apply font-sans;
   }
   .section-container {
-    @apply min-h-screen w-full flex items-center justify-center relative px-2 md:px-6 pt-20 md:pt-28 lg:pt-0;
+    @apply min-h-screen w-full flex items-center justify-center relative px-4 md:px-6 pt-20 md:pt-28 lg:pt-0;
   }
 }
 

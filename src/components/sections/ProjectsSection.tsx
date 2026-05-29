@@ -6,6 +6,9 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ExternalLinkIcon } from "lucide-react";
 import { Icons } from "../Icons";
 import Link from "next/link";
+import { Lens } from "../ui/lens";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../ui/button";
 
 type Project = {
   name: string;
@@ -37,7 +40,7 @@ const Data: Project[] = [
     github: "https://github.com/melvstein/mj-store",
     videoSrc: "/videos/mj-store.mov",
     techStack: ["Springboot", "REST APIs", "MongoDB", "Next.js", "Tailwind CSS"],
-    accent: "purple",
+    accent: "blue",
     backendPrivate: true,
   },
   {
@@ -47,7 +50,7 @@ const Data: Project[] = [
     github: "https://github.com/melvstein/aela-first-bday-invitation",
     videoSrc: "/videos/aela-first-bday-invitation.mov",
     techStack: ["Next.js", "Tailwind CSS"],
-    accent: "pink",
+    accent: "blue",
   },
   {
     name: "Alice in One-derland",
@@ -56,7 +59,7 @@ const Data: Project[] = [
     github: "https://github.com/melvstein/alice-in-1derland",
     videoSrc: "/videos/alice-in-1derland.mov",
     techStack: ["Vite", "Reactjs", "React Three Fiber", "Tailwind CSS", "Framer Motion"],
-    accent: "emerald",
+    accent: "blue",
   },
 ];
 
@@ -129,6 +132,83 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Data.map((project) => {
             const accent = accentStyles[project.accent];
+
+            return (
+              <div
+                key={project.name}
+                className={`group relative flex flex-col backdrop-blur-xl bg-foreground/5 border border-primary/10 rounded-md overflow-hidden transition-all duration-500 ${accent.border} ${accent.shadow}`}
+              >
+                <Card className="relative w-full h-full flex flex-col shadow-none border-0 bg-transparent rounded-none">
+                  <CardHeader>
+                    <Lens
+                      zoomFactor={2}
+                      lensSize={150}
+                      isStatic={false}
+                      ariaLabel="Zoom Area"
+                    >
+                      <Safari
+                        url={project.href}
+                        videoSrc={project.videoSrc}
+                        className="w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </Lens>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <CardTitle className="text-2xl">{project.name}</CardTitle>
+                    <CardDescription>
+                      {project.description}
+                    </CardDescription>
+                  </CardContent>
+                  <CardFooter className="space-x-4">
+                    <Link href={project.href} target="_blank" className={`p-3 rounded-full ${accent.button} text-foreground hover:scale-110 transition-transform`}>
+                      <ExternalLinkIcon className="w-5 h-5" />
+                    </Link>
+                    {project.github && (
+                      project.backendPrivate ? (
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Link href={project.github} target="_blank" className="p-3 rounded-full bg-foreground/10 border border-primary/25 text-foreground hover:scale-110 transition-transform">
+                                <Icons.github className="w-5 h-5" />
+                              </Link>
+                            </TooltipTrigger>
+                            <TooltipContent>Frontend only — backend is private</TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      ) : (
+                        <Link href={project.github} target="_blank" className="p-3 rounded-full bg-foreground/10 border border-primary/25 text-foreground hover:scale-110 transition-transform">
+                          <Icons.github className="w-5 h-5" />
+                        </Link>
+                      )
+                    )}
+                  </CardFooter>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const ProjectsSection1 = () => {
+  return (
+    <section id="projects" className="section-container">
+      <div className="max-w-7xl mx-auto w-full relative z-10 md:pt-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Featured Work</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold">Selected Projects</h2>
+          </div>
+          <p className="text-slate-400 max-w-md text-sm md:text-base font-light">
+            A handpicked collection of applications pushing the boundaries of interactive design, responsive layouts, and performance.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {Data.map((project) => {
+            const accent = accentStyles[project.accent];
             return (
               <div
                 key={project.name}
@@ -158,7 +238,7 @@ const ProjectsSection = () => {
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger asChild>
-                              <Link href={project.github} target="_blank" className="p-3 rounded-full bg-white/10 border border-white/25 text-white hover:scale-110 transition-transform">
+                              <Link href={project.github} target="_blank" className="p-3 rounded-full bg-white/10 border border-primary/25 text-white hover:scale-110 transition-transform">
                                 <Icons.github className="w-5 h-5" />
                               </Link>
                             </TooltipTrigger>
@@ -166,7 +246,7 @@ const ProjectsSection = () => {
                           </Tooltip>
                         </TooltipProvider>
                       ) : (
-                        <Link href={project.github} target="_blank" className="p-3 rounded-full bg-white/10 border border-white/25 text-white hover:scale-110 transition-transform">
+                        <Link href={project.github} target="_blank" className="p-3 rounded-full bg-white/10 border border-primary/25 text-white hover:scale-110 transition-transform">
                           <Icons.github className="w-5 h-5" />
                         </Link>
                       )
