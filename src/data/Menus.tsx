@@ -41,9 +41,9 @@ const Menus : Menus = {
       name: "Home",
       icon: HomeIcon,
     },
-    projects: {
-      href: "#projects",
-      name: "Projects",
+    experience: {
+      href: "#experience",
+      name: "Experience",
       icon: null,
     },
     skills: {
@@ -51,9 +51,9 @@ const Menus : Menus = {
       name: "Skills",
       icon: null,
     },
-    experience: {
-      href: "#experience",
-      name: "Experience",
+    projects: {
+      href: "#projects",
+      name: "Projects",
       icon: null,
     },
   },

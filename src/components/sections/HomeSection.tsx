@@ -67,7 +67,7 @@ const HomeSection = () => {
           </p>
           
           <div className="flex flex-wrap items-center justify-between sm:justify-start gap-2 md:gap-4 pt-4">
-            <Link href="#projects" className="group relative px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide skin-bg-gradient text-primary-foreground shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+            <Link href="#projects" className="w-full md:w-auto group relative px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide skin-bg-gradient text-primary-foreground shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
               Explore Work
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -75,21 +75,21 @@ const HomeSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
+              className="w-full md:w-auto h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
             >
-              <Link href={LINK.RESUME} target="_blank" rel="noopener noreferrer" download>
-                <Download className="w-4 h-4 mr-2" />
-                Resume
+              <Link href="#contact">
+                Get in touch
               </Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
+              className="w-full md:w-auto h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
             >
-              <Link href="#contact">
-                Get in touch
+              <Link href={LINK.RESUME} target="_blank" rel="noopener noreferrer" download>
+                <Download className="w-4 h-4 mr-2" />
+                Resume
               </Link>
             </Button>
           </div>

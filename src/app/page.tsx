@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <main className="min-h-screen w-full flex flex-col scroll-smooth">
       <HomeSection />
-      <ProjectsSection />
-      <SkillsSection />
       <ExperienceSection />
+      <SkillsSection />
+      <ProjectsSection />
       <ContactSection />
     </main>
   );
