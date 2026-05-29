@@ -103,7 +103,7 @@ const techStackStyles: Record<string, string> = {
   "React Three Fiber": "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
   "Tailwind CSS": "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
   "Framer Motion": "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  "Next.js": "bg-slate-500/10 text-slate-300 border-slate-500/20",
+  "Next.js": "bg-slate-500/10 text-slate-500 dark:text-slate-300 border-slate-500/20",
   "Springboot": "bg-green-500/10 text-green-400 border-green-500/20",
   "REST APIs": "bg-amber-500/10 text-amber-400 border-amber-500/20",
   "MongoDB": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
