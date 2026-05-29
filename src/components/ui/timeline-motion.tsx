@@ -106,7 +106,7 @@ export const TimelineMotion = ({
                 className={`backdrop-blur-xl bg-primary/5 border border-primary/10 dark:border-white/10 p-6 md:p-8 rounded-2xl space-y-3 transition-colors ${a.hover}`}
               >
                 <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
-                  {exp.role}
+                  {exp.role} <span className="text-xs font-medium uppercase"> · {exp.type}</span>
                 </h3>
                 <p className={`text-sm font-medium ${a.company}`}>
                   {exp.company}
