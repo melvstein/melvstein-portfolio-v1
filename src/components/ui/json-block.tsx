@@ -92,7 +92,7 @@ export const JsonBlock = ({ data, className, showLineNumbers = false }: JsonBloc
   return (
     <pre
       className={cn(
-        "font-mono text-sm bg-slate-900/60 backdrop-blur-md border border-white/10 rounded-md p-4 overflow-x-auto",
+        "font-mono text-sm bg-primary/10 backdrop-blur-md border border-primary/10 rounded-md p-4 overflow-x-auto scroll-smooth scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent",
         className
       )}
     >

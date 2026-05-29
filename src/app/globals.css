@@ -213,6 +213,9 @@
   .section-container {
     @apply min-h-screen w-full flex items-center justify-center relative px-2 md:px-6 pt-20 md:pt-28 lg:pt-0;
   }
+}
+
+@layer components {
   .skin-bg-gradient {
     @apply bg-linear-to-r from-primary to-secondary;
   }
