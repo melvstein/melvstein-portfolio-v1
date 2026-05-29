@@ -103,7 +103,7 @@ export const TimelineMotion = ({
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className={`backdrop-blur-xl bg-primary/5 border border-white/10 p-6 md:p-8 rounded-2xl space-y-3 transition-colors ${a.hover}`}
+                className={`backdrop-blur-xl bg-primary/5 border border-primary/10 dark:border-white/10 p-6 md:p-8 rounded-2xl space-y-3 transition-colors ${a.hover}`}
               >
                 <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
                   {exp.role}

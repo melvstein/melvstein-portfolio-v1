@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
-import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 import Image from "next/image";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card"
 import { LightRays } from "../ui/light-rays";
@@ -38,7 +37,7 @@ const AboutSection = () => {
               colors={["var(--primary)", "var(--secondary)", "var(--accent)"]}
             />
             <TypingAnimation
-                className="block w-full md:text-7xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter"
+                className="block w-full md:text-7xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[1.1]"
                   words={[
                     "Full-Stack Developer",
                   ]}
@@ -82,11 +81,12 @@ const AboutSection = () => {
           <NeonGradientCard
             className="relative flex items-center justify-center"
             neonColors = {{
-              firstColor: "var(--secondary)",
-              secondColor: "var(--primary)",
+              firstColor: "var(--primary)",
+              secondColor: "var(--secondary)",
             }}
           >
-            <LightRays color="rgba(59, 130, 246, 1)" />
+            {/* rgba(59, 130, 246, 1) */}
+            <LightRays color="rgba(0, 0, 255, 0.5)" />
             <FlickeringGrid
               className="absolute inset-0 z-0 mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(450px_circle_at_center,white,transparent)]"
               squareSize={4}
