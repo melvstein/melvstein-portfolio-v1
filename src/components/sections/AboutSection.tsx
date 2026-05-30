@@ -178,7 +178,7 @@ const AboutSection = () => {
                     <p className="font-heading text-2xl font-bold text-muted-foreground">
                       {s.value}
                     </p>
-                    <p className="text-[11px] uppercase tracking-widest text-slate-500 font-heading font-semibold">
+                    <p className="text-[11px] uppercase tracking-widest text-muted-foreground font-heading font-semibold">
                       {s.label}
                     </p>
                   </motion.div>

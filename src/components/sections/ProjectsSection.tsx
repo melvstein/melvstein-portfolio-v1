@@ -112,7 +112,7 @@ const techStackStyles: Record<string, string> = {
   "PostgreSQL": "bg-sky-500/10 text-sky-400 border-sky-500/20",
 };
 
-const defaultTechStyle = "bg-white/10 text-slate-300 border-white/20";
+const defaultTechStyle = "bg-white/10 text-muted-foreground border-white/20";
 
 const ProjectsSection = () => {
   return (
@@ -234,7 +234,7 @@ const ProjectsSection1 = () => {
                           videoSrc={project.videoSrc}
                           className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                         />
-                        <p className="absolute text-xs text-slate-500 font-mono">
+                        <p className="absolute text-xs text-muted-foreground font-mono">
                           {project.href}
                         </p>
                       </div>

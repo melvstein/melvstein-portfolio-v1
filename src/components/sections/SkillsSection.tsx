@@ -80,7 +80,7 @@ const SkillsSection = () => {
                       >
                         {accent.title}
                       </h3>
-                      <span className="text-[10px] font-mono text-slate-500">
+                      <span className="text-[10px] font-mono text-muted-foreground">
                         {skillItems.length} items
                       </span>
                     </div>

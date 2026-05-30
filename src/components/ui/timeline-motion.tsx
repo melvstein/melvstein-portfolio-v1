@@ -97,7 +97,7 @@ export const TimelineMotion = ({
                 <span className={`w-1.5 h-1.5 rounded-full ${a.inner}`} />
               </motion.div>
 
-              <div className="md:absolute md:-left-32 md:top-1.5 md:w-28 text-left md:text-right tracking-tighter font-heading text-sm font-semibold text-slate-500">
+              <div className="md:absolute md:-left-32 md:top-1.5 md:w-28 text-left md:text-right tracking-tighter font-heading text-sm font-semibold text-muted-foreground">
                 {exp.date}
               </div>
 
