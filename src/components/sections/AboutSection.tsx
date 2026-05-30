@@ -3,6 +3,9 @@
 import { motion } from "motion/react";
 import { Briefcase, Code2, Coffee, Rocket } from "lucide-react";
 import Image from "next/image";
+import { NeonGradientCard } from "../ui/neon-gradient-card";
+import { LightRays } from "../ui/light-rays";
+import { FlickeringGrid } from "../ui/flickering-grid";
 
 const stats = [
   { icon: Briefcase, label: "Years Experience", value: "8+" },
@@ -53,15 +56,32 @@ const AboutSection = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 backdrop-blur-xl">
-              <Image
-                src="/images/melvstein_profile.png"
-                alt="Melvin Justine"
-                fill
-                className="object-cover grayscale-25 -scale-x-100"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent" />
+            <div className="relative aspect-square w-full flex items-center justify-center">
+              <NeonGradientCard
+                className="relative flex items-center justify-center"
+                neonColors = {{
+                  firstColor: "var(--primary)",
+                  secondColor: "var(--secondary)",
+                }}
+              >
+                {/* rgba(59, 130, 246, 1) */}
+                <LightRays color="rgba(0, 0, 255, 0.5)" />
+                <FlickeringGrid
+                  className="absolute inset-0 z-0 mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(450px_circle_at_center,white,transparent)] rounded-2xl"
+                  squareSize={4}
+                  gridGap={6}
+                  color="#60A5FA"
+                  maxOpacity={0.5}
+                  flickerChance={0.1}
+                />
+                <Image
+                  src="/images/melvstein_profile.png"
+                  alt="Melvin Justine"
+                  fill
+                  className="object-cover grayscale-25 -scale-x-100 rounded-2xl"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </NeonGradientCard>
             </div>
           </motion.div>
 

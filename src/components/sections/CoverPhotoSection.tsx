@@ -46,7 +46,7 @@ const CoverPhotoSection = () => {
             />
           </p>
         </div>
-        <div className="relative lg:col-span-5 w-full h-64 md:h-96 flex items-center justify-center">
+        <div className="relative lg:col-span-5 w-full aspect-3/2 flex items-center justify-center">
           <NeonGradientCard
             className="relative flex items-center justify-center"
             neonColors={{
