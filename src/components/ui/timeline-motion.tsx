@@ -114,6 +114,32 @@ export const TimelineMotion = ({
 
                 <div className="pt-2">
                   <p className="text-xs uppercase tracking-widest text-foreground mb-2 font-heading font-semibold">
+                    Highlights
+                  </p>
+                  <ul className="space-y-1.5">
+                    {exp.experiences.map((item, ei) => (
+                      <motion.li
+                        key={ei}
+                        initial={{ opacity: 0, x: -8 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-80px" }}
+                        transition={{
+                          duration: 0.25,
+                          delay: i * 0.08 + 0.15 + ei * 0.04,
+                        }}
+                        className="relative pl-4 text-sm text-slate-400 leading-relaxed font-light"
+                      >
+                        <span
+                          className={`absolute left-0 top-2 w-1.5 h-1.5 rounded-full ${a.inner}`}
+                        />
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-2">
+                  <p className="text-xs uppercase tracking-widest text-foreground mb-2 font-heading font-semibold">
                     Tech Stack
                   </p>
                   <div className="flex flex-wrap gap-2">
