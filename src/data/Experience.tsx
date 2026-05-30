@@ -1,7 +1,9 @@
 export type Experience = {
   company: string;
   role: string;
-  type: string;
+  employmentType: string;
+  locationType: string;
+  location: string;
   date: string;
   tech: string[];
   experiences: string[];
@@ -12,7 +14,9 @@ export const experiences: Experience[] = [
   {
     company: "Vtimetech Inc.",
     role: "Software Developer",
-    type: "Full-time",
+    employmentType: "Full-time",
+    locationType: "Remote",
+    location: "18A Trafalgar Plaza Bldg. 105 H.V Dela Costa St., Brgy Bel-Air, Makati City",
     date: "Jun 2021 — Present · 5 yrs",
     tech: ["Codeigniter", "Laravel", "Springboot", "MySQL", "REST APIs", "Docker"],
     experiences: [
@@ -31,7 +35,9 @@ export const experiences: Experience[] = [
   {
     company: "Self-Employed",
     role: "Freelance Web Developer",
-    type: "Freelance",
+    employmentType: "Freelance",
+    locationType: "Remote",
+    location: "Poblacion, Muntinlupa City",
     date: "Oct 2019 — Jun 2021 · 1 yr 8 mos",
     tech: [
       "Laravel",
@@ -56,7 +62,9 @@ export const experiences: Experience[] = [
   {
     company: "Corporate Holdings Management, Inc.",
     role: "IT Assistant / Full Stack Web Developer",
-    type: "Full-time",
+    employmentType: "Full-time",
+    locationType: "On-site",
+    location: "Corporate Holdings Centre, #43 Buencamino ST., Zapote Road, Alabang, Muntinlupa City",
     date: "Aug 2017 — Oct 2019 · 2 yrs 3 mos",
     tech: [
       "Computer Hardware Troubleshooting",

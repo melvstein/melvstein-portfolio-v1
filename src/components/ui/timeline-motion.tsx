@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import type { Experience } from "@/data/Experience";
+import { MapPinned } from "lucide-react";
 
 const accentMap = {
   blue: {
@@ -106,10 +107,13 @@ export const TimelineMotion = ({
                 className={`backdrop-blur-xl bg-primary/5 border border-primary/10 dark:border-white/10 p-6 md:p-8 rounded-2xl space-y-3 transition-colors ${a.hover}`}
               >
                 <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
-                  {exp.role} <span className="text-xs font-medium uppercase"> · {exp.type}</span>
+                  {exp.role} <span className="text-xs font-medium uppercase"> · {exp.employmentType}</span>
                 </h3>
                 <p className={`text-sm font-medium ${a.company}`}>
-                  {exp.company}
+                  {exp.company} <span className="text-xs font-medium uppercase text-foreground"> · {exp.locationType}</span>
+                  <span className="text-xs font-medium uppercase text-foreground flex items-center gap-1">
+                    <MapPinned className="w-3 h-3" /> {exp.location}
+                  </span>
                 </p>
 
                 <div className="pt-2">
