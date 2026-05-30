@@ -7,28 +7,28 @@ import { MapPinned } from "lucide-react";
 
 const accentMap = {
   blue: {
-    dot: "border-primary glow-shadow-heavy",
-    inner: "bg-secondary",
-    company: "text-blue-400",
-    hover: "hover:border-primary/20",
-    chip: "border-primary/20 text-blue-300",
-    line: "from-primary via-secondary",
+    dot: "border-primary",
+    inner: "bg-primary",
+    company: "text-primary",
+    hover: "hover:border-primary/20 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-shadow duration-300",
+    chip: "border-primary/20 text-primary",
+    line: "from-primary via-primary/20",
   },
   cyan: {
-    dot: "border-cyan-500",
+    dot: "border-secondary",
     inner: "bg-secondary",
     company: "text-secondary",
-    hover: "hover:border-cyan-500/20",
-    chip: "border-cyan-500/20 text-cyan-300",
-    line: "from-cyan-500 via-secondary",
+    hover: "hover:border-secondary/20 hover:shadow-[0_0_40px_rgba(0,255,255,0.15)] transition-shadow duration-300",
+    chip: "border-secondary/20 text-secondary",
+    line: "from-secondary via-secondary/20",
   },
   purple: {
     dot: "border-accent",
-    inner: "bg-purple-400",
-    company: "text-purple-400",
-    hover: "hover:border-accent/20",
-    chip: "border-accent/20 text-purple-300",
-    line: "from-accent via-purple-400",
+    inner: "bg-accent",
+    company: "text-accent",
+    hover: "hover:border-accent/20 hover:shadow-[0_0_40px_rgba(128,0,128,0.15)] transition-shadow duration-300",
+    chip: "border-accent/20 text-accent",
+    line: "from-accent via-accent/20",
   },
 } as const;
 
@@ -69,7 +69,7 @@ export const TimelineMotion = ({
       >
         <motion.div
           style={{ height: lineHeight, opacity: lineOpacity }}
-          className="absolute -left-px top-0 w-0.5 bg-linear-to-b from-primary via-secondary to-accent rounded-full"
+          className="absolute -left-px top-0 w-0.5 bg-linear-to-b from-primary via-primary/20 to-accent/20 rounded-full"
         />
 
         {data.map((exp, i) => {
