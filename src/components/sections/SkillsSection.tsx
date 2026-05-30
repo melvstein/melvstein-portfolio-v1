@@ -20,6 +20,11 @@ const categoryAccents: Record<keyof typeof Skills, { glow: string; label: string
     label: "text-accent",
     border: "hover:border-accent/30",
   },
+  aiTools: {
+    glow: "from-green-500/20 to-transparent",
+    label: "text-green-500",
+    border: "hover:border-green-500/30",
+  },
 };
 
 const SkillsSection = () => {

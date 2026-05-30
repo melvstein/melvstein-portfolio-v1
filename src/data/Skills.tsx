@@ -59,6 +59,20 @@ const Skills = {
             icon: Icons.mongodb,
         },
     },
+    aiTools: {
+        chatgpt: {
+            name: "ChatGPT",
+            icon: Icons.chatgpt,
+        },
+        copilot: {
+            name: "Copilot",
+            icon: Icons.copilot,
+        },
+        claude: {
+            name: "Claude",
+            icon: Icons.claude,
+        },
+    },
 };
 
 export default Skills;
