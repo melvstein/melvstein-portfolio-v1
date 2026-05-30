@@ -4,23 +4,27 @@ import { Marquee } from "../ui/marquee";
 import { cn } from "@/lib/utils";
 import Skills from "@/data/Skills";
 
-const categoryAccents: Record<keyof typeof Skills, { glow: string; label: string; border: string }> = {
+const categoryAccents: Record<keyof typeof Skills, { title: string; glow: string; label: string; border: string }> = {
   backend: {
+    title: "Backend",
     glow: "from-primary/20 to-transparent",
     label: "text-primary",
     border: "hover:border-primary/30",
   },
   frontend: {
+    title: "Frontend",
     glow: "from-secondary/20 to-transparent",
     label: "text-secondary",
     border: "hover:border-secondary/30",
   },
   database: {
+    title: "Database",
     glow: "from-accent/20 to-transparent",
     label: "text-accent",
     border: "hover:border-accent/30",
   },
   aiTools: {
+    title: "AI Tools",
     glow: "from-green-500/20 to-transparent",
     label: "text-green-500",
     border: "hover:border-green-500/30",
@@ -68,7 +72,7 @@ const SkillsSection = () => {
                           accent.label
                         )}
                       >
-                        {category}
+                        {accent.title}
                       </h3>
                       <span className="text-[10px] font-mono text-slate-500">
                         {skillItems.length} items
