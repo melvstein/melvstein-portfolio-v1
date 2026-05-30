@@ -43,7 +43,7 @@ const HomeSection = () => {
             />
           </h1>
           
-          <p className="text-slate-400 text-md md:text-xl max-w-xl leading-relaxed font-light">
+          <p className="text-muted-foreground text-md md:text-xl max-w-xl leading-relaxed font-light">
             I build&nbsp;
             <TypingAnimation
               className="text-secondary font-medium font-heading"

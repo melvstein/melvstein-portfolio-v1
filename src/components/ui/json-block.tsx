@@ -47,18 +47,18 @@ const renderValue = (value: JsonValue, indent: number): React.ReactNode => {
 
   if (Array.isArray(value)) {
     if (value.length === 0)
-      return <span className="text-slate-400">[]</span>;
+      return <span className="text-muted-foreground">[]</span>;
     return (
       <>
-        <span className="text-slate-400">[</span>
+        <span className="text-muted-foreground">[</span>
         {value.map((item, i) => (
           <div key={i} style={{ paddingLeft: (indent + 1) * 16 }}>
             {renderValue(item, indent + 1)}
-            {i < value.length - 1 && <span className="text-slate-400">,</span>}
+            {i < value.length - 1 && <span className="text-muted-foreground">,</span>}
           </div>
         ))}
         <div style={{ paddingLeft: indent * 16 }}>
-          <span className="text-slate-400">]</span>
+          <span className="text-muted-foreground">]</span>
         </div>
       </>
     );
@@ -66,20 +66,20 @@ const renderValue = (value: JsonValue, indent: number): React.ReactNode => {
 
   const entries = Object.entries(value);
   if (entries.length === 0)
-    return <span className="text-slate-400">{"{}"}</span>;
+    return <span className="text-muted-foreground">{"{}"}</span>;
   return (
     <>
-      <span className="text-slate-400">{"{"}</span>
+      <span className="text-muted-foreground">{"{"}</span>
       {entries.map(([k, v], i) => (
         <div key={k} style={{ paddingLeft: (indent + 1) * 16 }}>
           <span className="text-primary">&quot;{k}&quot;</span>
-          <span className="text-slate-400">: </span>
+          <span className="text-muted-foreground">: </span>
           {renderValue(v, indent + 1)}
-          {i < entries.length - 1 && <span className="text-slate-400">,</span>}
+          {i < entries.length - 1 && <span className="text-muted-foreground">,</span>}
         </div>
       ))}
       <div style={{ paddingLeft: indent * 16 }}>
-        <span className="text-slate-400">{"}"}</span>
+        <span className="text-muted-foreground">{"}"}</span>
       </div>
     </>
   );

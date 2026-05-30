@@ -31,7 +31,7 @@ const ContactSection = () => {
               Contact
             </h2>
           </div>
-          <p className="text-slate-400 max-w-md text-sm md:text-base font-light">
+          <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
             Have a project in mind, a role to discuss, or just want to say hi? My inbox is always open.
           </p>
         </div>

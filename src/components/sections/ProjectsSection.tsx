@@ -123,7 +123,7 @@ const ProjectsSection = () => {
             <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Featured Work</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">Selected Projects</h2>
           </div>
-          <p className="text-slate-400 max-w-md text-sm md:text-base font-light">
+          <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
             A handpicked collection of applications pushing the boundaries of interactive design, responsive layouts, and performance.
           </p>
         </div>
@@ -212,7 +212,7 @@ const ProjectsSection1 = () => {
             <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Featured Work</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">Selected Projects</h2>
           </div>
-          <p className="text-slate-400 max-w-md text-sm md:text-base font-light">
+          <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
             A handpicked collection of applications pushing the boundaries of interactive design, responsive layouts, and performance.
           </p>
         </div>
@@ -278,7 +278,7 @@ const ProjectsSection1 = () => {
                   <h3 className={`font-heading text-2xl font-bold transition-colors ${accent.title}`}>
                     {project.name}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed font-light">
+                  <p className="text-muted-foreground text-sm leading-relaxed font-light">
                     {project.description}
                   </p>
                 </div>

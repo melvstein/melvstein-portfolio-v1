@@ -131,7 +131,7 @@ export const TimelineMotion = ({
                           duration: 0.25,
                           delay: i * 0.08 + 0.15 + ei * 0.04,
                         }}
-                        className="relative pl-4 text-sm text-slate-400 leading-relaxed font-light"
+                        className="relative pl-4 text-sm text-muted-foreground leading-relaxed font-light"
                       >
                         <span
                           className={`absolute left-0 top-2 w-1.5 h-1.5 rounded-full ${a.inner}`}

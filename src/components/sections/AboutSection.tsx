@@ -6,6 +6,8 @@ import Image from "next/image";
 import { NeonGradientCard } from "../ui/neon-gradient-card";
 import { LightRays } from "../ui/light-rays";
 import { FlickeringGrid } from "../ui/flickering-grid";
+import { cn } from "@/lib/utils";
+import { NoiseTexture } from "../ui/noise-texture";
 
 const stats = [
   { icon: Briefcase, label: "Years Experience", value: "8+" },
@@ -32,7 +34,13 @@ const highlights = [
 const AboutSection = () => {
   return (
     <section id="about" className="section-container">
-      <div className="max-w-7xl mx-auto w-full relative z-10 md:pt-20">
+      <NoiseTexture
+        className={cn(
+          "absolute inset-0",
+          "mask-[radial-gradient(900px_circle_at_center,white,transparent)]"
+        )}
+      />
+      <div className="max-w-7xl mx-auto w-full relative z-10 md:py-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">
@@ -42,7 +50,7 @@ const AboutSection = () => {
               Developer, builder, lifelong learner
             </h2>
           </div>
-          <p className="text-slate-400 max-w-md text-sm md:text-base font-light">
+          <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
             A full-stack developer focused on backend systems, REST APIs, and
             polished user experiences — with a side of 3D web experiments.
           </p>
@@ -91,7 +99,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="space-y-4 text-slate-400 text-md md:text-lg leading-relaxed font-light"
+              className="space-y-4 text-muted-foreground text-md md:text-lg leading-relaxed font-light"
             >
               <p>
                 I&apos;m{" "}
@@ -147,7 +155,7 @@ const AboutSection = () => {
                   <p className="font-heading text-sm font-semibold text-foreground">
                     {h.title}
                   </p>
-                  <p className="text-xs text-slate-400 leading-relaxed font-light">
+                  <p className="text-xs text-foreground leading-relaxed font-light">
                     {h.body}
                   </p>
                 </motion.div>
@@ -167,7 +175,7 @@ const AboutSection = () => {
                     className="rounded-xl border border-primary/10 bg-primary/5 backdrop-blur-xl p-4 flex flex-col items-start gap-2 hover:border-blue-500/30 transition-colors"
                   >
                     <Icon className="w-5 h-5 text-blue-400" />
-                    <p className="font-heading text-2xl font-bold text-foreground">
+                    <p className="font-heading text-2xl font-bold text-muted-foreground">
                       {s.value}
                     </p>
                     <p className="text-[11px] uppercase tracking-widest text-slate-500 font-heading font-semibold">

@@ -46,7 +46,7 @@ const SkillsSection = () => {
             <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Toolkit</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">Skills &amp; Stack</h2>
           </div>
-          <p className="text-slate-400 max-w-md text-sm md:text-base font-light">
+          <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
             The languages, frameworks, and platforms I reach for when shipping production work.
           </p>
         </div>
@@ -92,7 +92,7 @@ const SkillsSection = () => {
                       {skillItems.map((item) => {
                         const Icon = item.icon;
                         const iconClass = "";
-                        
+
                         return (
                           <div
                             key={item.name}
