@@ -22,6 +22,7 @@ const DATA = {
     Menus.social.github,
     Menus.social.linkedIn,
     Menus.social.x,
+    Menus.social.kofi,
   ],
   setting: [
     Menus.setting.themeToggle,

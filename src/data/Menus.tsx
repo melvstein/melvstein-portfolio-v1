@@ -18,14 +18,16 @@ export type Social = {
 export type Menus = {
   navigation: {
     home: Menu;
-    projects: Menu;
+    about: Menu;
     skills: Menu;
     experience: Menu;
+    projects: Menu;
   },
   social: {
     github: Social;
     linkedIn: Social;
     x: Social;
+    kofi: Social;
   },
   setting: {
     themeToggle: {
@@ -41,6 +43,11 @@ const Menus : Menus = {
       href: "/",
       name: "Home",
       icon: HomeIcon,
+    },
+    about: {
+      href: "#about",
+      name: "About",
+      icon: null,
     },
     experience: {
       href: "#experience",
@@ -73,6 +80,11 @@ const Menus : Menus = {
       name: "X",
       url: LINK.X,
       icon: Icons.x,
+    },
+    kofi: {
+      name: "Ko-fi",
+      url: LINK.KOFI,
+      icon: Icons.kofi,
     },
   },
   setting: {

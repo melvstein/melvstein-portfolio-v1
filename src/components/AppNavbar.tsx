@@ -41,6 +41,13 @@ const DesktopMenus = () => {
     <div className="hidden md:flex items-center gap-4">
       <NavigationMenus />
       <LetsConnect />
+      <Link
+        href={Menus.social.kofi.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+          <Menus.social.kofi.icon className="w-5 h-5 hover:text-secondary" />
+      </Link>
     </div>
   );
 };
