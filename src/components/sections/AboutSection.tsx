@@ -7,7 +7,6 @@ import { NeonGradientCard } from "../ui/neon-gradient-card";
 import { LightRays } from "../ui/light-rays";
 import { FlickeringGrid } from "../ui/flickering-grid";
 import { cn } from "@/lib/utils";
-import { NoiseTexture } from "../ui/noise-texture";
 
 const stats = [
   { icon: Briefcase, label: "Years Experience", value: "8+" },
@@ -34,12 +33,6 @@ const highlights = [
 const AboutSection = () => {
   return (
     <section id="about" className="section-container">
-      <NoiseTexture
-        className={cn(
-          "absolute inset-0",
-          "mask-[radial-gradient(900px_circle_at_center,white,transparent)]"
-        )}
-      />
       <div className="max-w-7xl mx-auto w-full relative z-10 md:py-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -99,7 +92,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="space-y-4 text-muted-foreground text-md md:text-lg leading-relaxed font-light"
+              className="space-y-4 text-foreground text-md md:text-lg leading-relaxed font-light"
             >
               <p>
                 I&apos;m{" "}
