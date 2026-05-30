@@ -56,7 +56,7 @@ const CoverPhotoSection = () => {
           >
             <LightRays color="rgba(0, 0, 255, 0.5)" />
             <FlickeringGrid
-              className="absolute inset-0 z-0 mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(450px_circle_at_center,white,transparent)]"
+              className="absolute inset-0 z-0 mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(450px_circle_at_center,white,transparent)] rounded-2xl"
               squareSize={4}
               gridGap={6}
               color="#60A5FA"
@@ -74,7 +74,7 @@ const CoverPhotoSection = () => {
             <Image
               src="/images/melvstein_cross_arm.png"
               alt="Melvin Justine"
-              className="absolute inset-0 w-full h-full object-cover -scale-x-100 grayscale-25"
+              className="absolute inset-0 w-full h-full object-cover -scale-x-100 grayscale-25 rounded-2xl"
               height={500}
               width={500}
             />
