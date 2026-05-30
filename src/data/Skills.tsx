@@ -14,10 +14,6 @@ const Skills = {
             name: "Codeigniter",
             icon: Icons.codeigniter,
         },
-        docker: {
-            name: "Docker",
-            icon: Icons.docker,
-        },
     },
     frontend: {
         nextjs: {
@@ -59,14 +55,28 @@ const Skills = {
             icon: Icons.mongodb,
         },
     },
+    devops: {
+        docker: {
+            name: "Docker",
+            icon: Icons.docker,
+        },
+        git: {
+            name: "Git",
+            icon: Icons.git,
+        },
+        linux: {
+            name: "Linux",
+            icon: Icons.linux,
+        }
+    },
     aiTools: {
         chatgpt: {
             name: "ChatGPT",
             icon: Icons.chatgpt,
         },
-        copilot: {
-            name: "Copilot",
-            icon: Icons.copilot,
+        githubCopilot: {
+            name: "GitHub Copilot",
+            icon: Icons.githubCopilot,
         },
         claude: {
             name: "Claude",

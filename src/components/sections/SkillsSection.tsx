@@ -23,6 +23,12 @@ const categoryAccents: Record<keyof typeof Skills, { title: string; glow: string
     label: "text-accent",
     border: "hover:border-accent/30",
   },
+  devops: {
+    title: "DevOps",
+    glow: "from-yellow-500/20 to-transparent",
+    label: "text-yellow-500",
+    border: "hover:border-yellow-500/30",
+  },
   aiTools: {
     title: "AI Tools",
     glow: "from-green-500/20 to-transparent",
@@ -85,11 +91,8 @@ const SkillsSection = () => {
                     >
                       {skillItems.map((item) => {
                         const Icon = item.icon;
-                        const iconClass =
-                          item.name === Skills.frontend.nextjs.name ||
-                          item.name === Skills.frontend.threejs.name
-                            ? "dark:fill-white"
-                            : "";
+                        const iconClass = "";
+                        
                         return (
                           <div
                             key={item.name}
