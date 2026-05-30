@@ -2,7 +2,7 @@
 
 > A modern, animated, performance-obsessed portfolio built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS v4** — designed to showcase production-grade engineering taste, not just code samples.
 
-🌐 **Live**: [melvstein.vercel.app](https://melvstein.vercel.app) &nbsp;•&nbsp; 💻 **Source**: [github.com/melvstein](https://github.com/melvstein) &nbsp;•&nbsp; 💼 **LinkedIn**: _coming soon_
+🌐 **Live**: [melvstein.vercel.app](https://melvstein.vercel.app) &nbsp;•&nbsp; 💻 **Source**: [github.com/melvstein](https://github.com/melvstein) &nbsp;•&nbsp; 💼 **LinkedIn**: [linkedin.com/in/melvstein/](https://www.linkedin.com/in/melvstein/)
 
 ---
 
@@ -82,22 +82,6 @@ src/
 
 ---
 
-## Installation
-
-### Prerequisites
-- **Node.js 20+**
-- **npm**, **pnpm**, or **bun**
-
-### Clone & install
-
-```bash
-git clone https://github.com/melvstein/melvstein-portfolio-v1.git
-cd melvstein-portfolio-v1
-npm install
-```
-
----
-
 ## Development
 
 ```bash
@@ -123,25 +107,6 @@ npx shadcn@latest add <component>
 
 ---
 
-## Deployment
-
-The site is deployed to **Vercel** with automatic CI/CD.
-
-1. Push to `main` → triggers a production deploy.
-2. Open a PR → Vercel generates a preview URL with a unique deployment.
-3. Environment variables are managed via the Vercel dashboard.
-
-To deploy your own copy:
-
-```bash
-npm i -g vercel
-vercel
-```
-
-Or click **Deploy** from the [Vercel dashboard](https://vercel.com/new) and import this repo.
-
----
-
 ## Performance Optimizations
 
 - **React Server Components** by default — only interactive islands ship JS to the client.
@@ -154,44 +119,14 @@ Or click **Deploy** from the [Vercel dashboard](https://vercel.com/new) and impo
 
 ---
 
-## Screenshots
-
-> _Add a few hero screenshots or short Loom/MP4 captures here. Suggested filenames:_
->
-> ```
-> public/images/screenshots/home.png
-> public/images/screenshots/projects.png
-> public/images/screenshots/experience.png
-> ```
-
-| Section | Preview |
-|--------|---------|
-| Home | `![Home](public/images/screenshots/home.png)` |
-| Projects | `![Projects](public/images/screenshots/projects.png)` |
-| Experience | `![Experience](public/images/screenshots/experience.png)` |
-
----
-
-## Future Improvements
-
-- [ ] **MDX blog** with shiki-powered code highlighting and reading-time estimates.
-- [ ] **i18n** (English / Filipino) via `next-intl`.
-- [ ] **Contact form** with server actions + spam protection (Cloudflare Turnstile).
-- [ ] **CMS-backed projects** (Sanity or Contentlayer) for easier content updates.
-- [ ] **Lighthouse 100 / 100 / 100 / 100** audit + Core Web Vitals tracking via Vercel Analytics.
-- [ ] **OG image generator** using `@vercel/og` for per-section share previews.
-- [ ] **End-to-end tests** with Playwright for nav + section anchors.
-
----
-
 ## Contact
 
 I'm open to **full-time roles**, **contract work**, and **interesting side projects** — especially in backend systems, fintech, and iGaming.
 
 - 🌐 **Portfolio** — [melvstein.vercel.app](https://melvstein.vercel.app)
 - 💻 **GitHub** — [github.com/melvstein](https://github.com/melvstein)
-- 💼 **LinkedIn** — _add URL here_
-- 📧 **Email** — _add email here_
+- 💼 **LinkedIn** — [linkedin.com/in/melvstein/](https://www.linkedin.com/in/melvstein/)
+- 📧 **Email** — melvinbayogo@gmail.com
 
 ---
 
