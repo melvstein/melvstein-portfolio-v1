@@ -27,7 +27,7 @@ const HomeSection = () => {
               <span className="text-primary uppercase">{ "Melvin Justine" }</span>
             </p>
             <TypingAnimation
-              className="block w-full text-4xl md:text-6xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[2.5]"
+              className="block w-full text-4xl md:text-6xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[2.5] [&_span:last-child]:text-secondary"
               words={[
                 "<FullStackDeveloper/>",
               ]}
