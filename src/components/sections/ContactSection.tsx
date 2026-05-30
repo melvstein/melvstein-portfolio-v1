@@ -14,6 +14,7 @@ const contactData = {
     github: LINK.GITHUB,
     linkedin: LINK.LINKEDIN,
     x: LINK.X,
+    kofi: LINK.KOFI,
   },
 };
 
