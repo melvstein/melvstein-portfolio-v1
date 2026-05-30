@@ -56,16 +56,15 @@ export function AppSidebar() {
           <LetsConnect onClick={toggleSidebar} />
         <SidebarSeparator />
           <div className="flex items-center justify-center gap-4">
-            <Button variant="ghost" size="icon-sm" className="hover:text-secondary skin-bg-gradient">
-              <Link href={LINK.GITHUB} target="_blank" rel="noopener noreferrer">
-                <Icons.github />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon-sm" className="hover:text-secondary skin-bg-gradient">
-              <Link href={LINK.LINKEDIN} target="_blank" rel="noopener noreferrer">
-                <Icons.linkedin />
-              </Link>
-            </Button>
+            {
+              Object.values(Menus.social).map((social) => (
+                <Button key={social.name} variant="ghost" size="icon-sm" className="hover:text-secondary">
+                  <Link href={social.url} target="_blank" rel="noopener noreferrer">
+                    <social.icon />
+                  </Link>
+                </Button>
+              ))
+            }
           </div>
         </SidebarFooter>
         <SidebarRail />

@@ -13,6 +13,7 @@ const contactData = {
   social: {
     github: LINK.GITHUB,
     linkedin: LINK.LINKEDIN,
+    x: LINK.X,
   },
 };
 

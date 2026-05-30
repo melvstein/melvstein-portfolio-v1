@@ -25,6 +25,7 @@ export type Menus = {
   social: {
     github: Social;
     linkedIn: Social;
+    x: Social;
   },
   setting: {
     themeToggle: {
@@ -67,6 +68,11 @@ const Menus : Menus = {
       name: "LinkedIn",
       url: LINK.LINKEDIN,
       icon: Icons.linkedin,
+    },
+    x: {
+      name: "X",
+      url: LINK.X,
+      icon: Icons.x,
     },
   },
   setting: {
