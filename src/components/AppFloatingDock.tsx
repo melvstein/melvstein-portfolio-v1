@@ -14,7 +14,7 @@ import { SidebarSeparator } from "./ui/sidebar";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
 
-const DATA = {
+const data = {
   navbar: [
     Menus.navigation.home,
   ],
@@ -35,7 +35,7 @@ const AppFloatingDock = () => {
       <TooltipProvider>
         <Dock direction="middle" className="bg-slate-950/10 backdrop-blur-sm border border-primary/20">
         {
-          DATA.navbar.map((nav) => (
+          data.navbar.map((nav) => (
             <DockIcon key={nav.name} className="hover:bg-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -66,7 +66,7 @@ const AppFloatingDock = () => {
         }
           <SidebarSeparator orientation="vertical" />
         {
-          DATA.social.map((social) => (
+          data.social.map((social) => (
             <DockIcon key={social.name} className="hover:bg-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -84,7 +84,7 @@ const AppFloatingDock = () => {
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{social.name}</p>
+                  <p>{social.tooltip}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -92,7 +92,7 @@ const AppFloatingDock = () => {
         }
           <SidebarSeparator orientation="vertical" />
         {
-          DATA.setting.map((setting) => (
+          data.setting.map((setting) => (
             <DockIcon key={setting.name} className="hover:bg-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
               <p 
                 className={cn(

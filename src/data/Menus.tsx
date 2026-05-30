@@ -13,6 +13,7 @@ export type Social = {
   name: string;
   url: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  tooltip: string;
 }
 
 export type Menus = {
@@ -70,21 +71,25 @@ const Menus : Menus = {
       name: "GitHub",
       url: LINK.GITHUB,
       icon: Icons.github,
+      tooltip: "GitHub",
     },
     linkedIn: {
       name: "LinkedIn",
       url: LINK.LINKEDIN,
       icon: Icons.linkedin,
+      tooltip: "LinkedIn",
     },
     x: {
       name: "X",
       url: LINK.X,
       icon: Icons.x,
+      tooltip: "X (formerly Twitter)",
     },
     kofi: {
       name: "Ko-fi",
       url: LINK.KOFI,
       icon: Icons.kofi,
+      tooltip: "Buy me a coffee on Ko-fi!",
     },
   },
   setting: {
