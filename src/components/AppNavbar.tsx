@@ -144,12 +144,12 @@ export const KofiLink = () => {
             href={Menus.social.kofi.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Support me on Ko-fi"
+            aria-label={Menus.social.kofi.tooltip}
           >
             <Menus.social.kofi.icon className="w-5 h-5 hover:text-secondary" />
           </Link>
         </TooltipTrigger>
-        <TooltipContent side="bottom">Buy me a coffee on Ko-fi</TooltipContent>
+        <TooltipContent side="bottom">{Menus.social.kofi.tooltip}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
