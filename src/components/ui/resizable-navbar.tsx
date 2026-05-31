@@ -10,6 +10,7 @@ import {
 
 import React, { useRef, useState } from "react";
 import MelvsteinLogoSvg from "../MelvsteinLogoSvg";
+import App from "@/data/App";
 
 
 interface NavbarProps {
@@ -238,7 +239,7 @@ export const NavbarLogo = () => {
         className="hidden md:flex w-6 h-6 md:w-7 md:h-7 fill-current text-primary"
       />
       <p className="font-heading text-lg md:text-xl font-bold tracking-wider bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
-        MELVSTEIN.DEV
+        {App.name}
       </p>
     </a>
   );

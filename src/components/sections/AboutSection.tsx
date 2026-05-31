@@ -8,6 +8,7 @@ import { LightRays } from "../ui/light-rays";
 import { FlickeringGrid } from "../ui/flickering-grid";
 import { Highlighter } from "@/components/ui/highlighter"
 import { HyperText } from "@/components/ui/hyper-text"
+import App from "@/data/App";
 
 const stats = [
   { icon: Briefcase, label: "Years Experience", value: "8+" },
@@ -41,7 +42,7 @@ const AboutSection = () => {
               About Me
             </HyperText>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">
-              Developer, builder, <Highlighter color="var(--primary)">lifelong learner</Highlighter>
+              Developer, builder, lifelong learner
             </h2>
           </div>
           <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
@@ -78,7 +79,7 @@ const AboutSection = () => {
                 />
                 <Image
                   src="/images/melvstein_profile.png"
-                  alt="Melvin Justine"
+                  alt={App.author}
                   fill
                   className="object-cover grayscale-25 -scale-x-100 rounded-2xl"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -97,7 +98,7 @@ const AboutSection = () => {
             >
               <p>
                 I&apos;m{" "}
-                <Highlighter color="var(--primary)">Melvin Justine</Highlighter>,
+                <Highlighter color="var(--primary)">{App.author}</Highlighter>,
                 a Software Developer based in the Philippines with experience
                 building and maintaining production-grade systems in the{" "}
                 <Highlighter color="var(--primary)" action="underline">iGaming</Highlighter> and{" "}

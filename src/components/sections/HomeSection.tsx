@@ -10,6 +10,7 @@ import { LightRays } from "../ui/light-rays";
 import LINK from "@/lib/link";
 import Link from "next/link";
 import Image from "next/image";
+import App from "@/data/App";
 
 const HomeSection = () => {
   return (
@@ -24,12 +25,12 @@ const HomeSection = () => {
           <h1 className="flex flex-col items-center lg:items-start font-heading text-[45px] font-bold tracking-tight leading-[1.1]">
             <p className="flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-4 text-3xl md:text-4xl">
               <span>{ "Hi, I'm" }</span>
-              <span className="text-primary uppercase">{ "Melvin Justine" }</span>
+              <span className="text-primary uppercase">{ App.author }</span>
             </p>
             <TypingAnimation
               className="block w-full text-4xl md:text-6xl text-center lg:text-left bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent glow-shadow tracking-tighter leading-[2.5] [&_span:last-child]:text-secondary"
               words={[
-                "<FullStackDeveloper/>",
+                App.clipTextTitle,
               ]}
               loop={false}
             />
@@ -98,15 +99,15 @@ const HomeSection = () => {
             />
             <ScrollVelocityContainer className="absolute inset-0 font-heading flex flex-col justify-center -skew-y-6 text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20 z-0 text-foreground/60">
               <ScrollVelocityRow baseVelocity={5} direction={1}>
-                Full-Stack Developer&nbsp;
+                {App.scrollVelocityTitle}&nbsp;
               </ScrollVelocityRow>
               <ScrollVelocityRow baseVelocity={5} direction={-1} className="">
-                Full-Stack Developer&nbsp;
+                {App.scrollVelocityTitle}&nbsp;
               </ScrollVelocityRow>
             </ScrollVelocityContainer>
             <Image 
               src="/images/melvstein_cross_arm.png"
-              alt="Melvin Justine"
+              alt={App.author}
               className="absolute inset-0 w-full h-full object-cover -scale-x-100 grayscale-25 rounded-2xl"
               height={500}
               width={500}

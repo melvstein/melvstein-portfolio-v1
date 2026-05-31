@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { experiences } from "@/data/Experience";
+import Experiences from "@/data/Experience";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ProgressiveBlur } from "../ui/progressive-blur";
 import { TimelineMotion } from "@/components/ui/timeline-motion";
@@ -50,7 +50,7 @@ const ExperienceSection = () => {
 
         <div className="md:col-span-2 relative h-150">
           <ScrollArea ref={scrollRootRef} className="relative h-150 overflow-hidden">
-            <TimelineMotion data={experiences} scrollContainerRef={viewportRef} />
+            <TimelineMotion data={Experiences} scrollContainerRef={viewportRef} />
             <div
               className={`pointer-events-none transition-opacity duration-300 ${
                 atBottom ? "opacity-0" : "opacity-100"

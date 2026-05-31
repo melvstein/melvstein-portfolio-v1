@@ -10,7 +10,7 @@ export type Experience = {
   accent: "blue" | "cyan" | "purple";
 };
 
-export const experiences: Experience[] = [
+const Experiences: Experience[] = [
   {
     company: "Vtimetech Inc.",
     role: "Software Developer",
@@ -91,3 +91,5 @@ export const experiences: Experience[] = [
     accent: "purple",
   },
 ];
+
+export default Experiences;

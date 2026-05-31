@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import MelvsteinLogoSvg from "@/assets/svgs/melvstein_logo.svg";
+import App from "@/data/App";
 
 const Logo = ({ onClick }: { onClick?: () => void }) => {
   return (
@@ -19,7 +20,7 @@ const Logo = ({ onClick }: { onClick?: () => void }) => {
         className="hidden md:flex w-6 h-6 md:w-7 md:h-7 fill-current text-primary"
       />
       <p className="font-heading text-lg md:text-xl font-bold tracking-wider bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
-        MELVSTEIN.DEV
+        {App.name}
       </p>
     </Link>
   );
