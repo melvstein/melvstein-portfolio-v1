@@ -9,13 +9,19 @@ import Link from "next/link";
 import { Lens } from "../ui/lens";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 
+type TechStack = {
+  backend?: string[];
+  frontend?: string[];
+  other?: string[];
+};
+
 type Project = {
   name: string;
   description: string;
   href: string;
   github?: string;
   videoSrc: string;
-  techStack: string[];
+  techStack: TechStack;
   accent: "blue" | "purple" | "pink" | "emerald";
   frontendOnly?: boolean;
   backendPrivate?: boolean;
@@ -28,7 +34,10 @@ const Data: Project[] = [
     href: "https://r3f-solar-system-ten.vercel.app/",
     github: "https://github.com/melvstein/r3f-solar-system",
     videoSrc: "/videos/solar-system.mov",
-    techStack: ["Springboot", "PostgreSQL", "REST APIs", "Vite", "Reactjs", "React Three Fiber", "Tailwind CSS", "Framer Motion"],
+    techStack: {
+      backend: ["Springboot", "PostgreSQL", "REST APIs"],
+      frontend: ["Vite", "Reactjs", "TypeScript", "React Three Fiber", "Tailwind CSS"],
+    },
     accent: "blue",
     backendPrivate: true,
   },
@@ -38,7 +47,10 @@ const Data: Project[] = [
     href: "https://mj-store-eight.vercel.app/",
     github: "https://github.com/melvstein/mj-store",
     videoSrc: "/videos/mj-store.mov",
-    techStack: ["Springboot", "REST APIs", "MongoDB", "Next.js", "Tailwind CSS"],
+    techStack: {
+      backend: ["Springboot", "MongoDB", "REST APIs"],
+      frontend: ["Next.js", "TypeScript", "Tailwind CSS"],
+    },
     accent: "blue",
     backendPrivate: true,
   },
@@ -48,7 +60,9 @@ const Data: Project[] = [
     href: "https://aela-first-bday-invitation.vercel.app/",
     github: "https://github.com/melvstein/aela-first-bday-invitation",
     videoSrc: "/videos/aela-first-bday-invitation.mov",
-    techStack: ["Next.js", "Tailwind CSS"],
+    techStack: {
+      frontend: ["Next.js", "TypeScript", "Tailwind CSS"],
+    },
     accent: "blue",
   },
   {
@@ -57,7 +71,9 @@ const Data: Project[] = [
     href: "https://alice-in-1derland.vercel.app/",
     github: "https://github.com/melvstein/alice-in-1derland",
     videoSrc: "/videos/alice-in-1derland.mov",
-    techStack: ["Vite", "Reactjs", "React Three Fiber", "Tailwind CSS", "Framer Motion"],
+    techStack: {
+      frontend: ["Vite", "Reactjs", "TypeScript", "React Three Fiber", "Tailwind CSS"],
+    },
     accent: "blue",
   },
 ];
@@ -114,6 +130,38 @@ const techStackStyles: Record<string, string> = {
 
 const defaultTechStyle = "bg-white/10 text-muted-foreground border-white/20";
 
+const techGroups: { key: keyof TechStack; label: string }[] = [
+  { key: "backend", label: "Backend" },
+  { key: "frontend", label: "Frontend" },
+  { key: "other", label: "Other" },
+];
+
+const TechStackGroups = ({ techStack }: { techStack: TechStack }) => (
+  <div className="flex flex-col gap-3">
+    {techGroups.map(({ key, label }) => {
+      const items = techStack[key];
+      if (!items || items.length === 0) return null;
+      return (
+        <div key={key} className="flex flex-col gap-1.5">
+          <span className="text-[10px] font-heading font-bold tracking-widest uppercase text-muted-foreground/70">
+            {label}
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {items.map((tech) => (
+              <span
+                key={tech}
+                className={`text-[10px] font-heading font-semibold uppercase tracking-wider px-2.5 py-1 border rounded-full ${techStackStyles[tech] ?? defaultTechStyle}`}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+);
+
 const ProjectsSection = () => {
   return (
     <section id="projects" className="section-container">
@@ -159,15 +207,8 @@ const ProjectsSection = () => {
                     <CardDescription>
                       {project.description}
                     </CardDescription>
-                    <div className="flex flex-wrap pt-4 gap-2">
-                      {project.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className={`text-[10px] font-heading font-semibold uppercase tracking-wider px-2.5 py-1 border rounded-full ${techStackStyles[tech] ?? defaultTechStyle}`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                    <div className="pt-4">
+                      <TechStackGroups techStack={project.techStack} />
                     </div>
                   </CardContent>
                   <CardFooter className="space-x-4">
@@ -265,16 +306,7 @@ const ProjectsSection1 = () => {
                   </div>
                 </div>
                 <div className="p-6 md:p-8 space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className={`text-[10px] font-heading font-semibold uppercase tracking-wider px-2.5 py-1 border rounded-full ${techStackStyles[tech] ?? defaultTechStyle}`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <TechStackGroups techStack={project.techStack} />
                   <h3 className={`font-heading text-2xl font-bold transition-colors ${accent.title}`}>
                     {project.name}
                   </h3>
