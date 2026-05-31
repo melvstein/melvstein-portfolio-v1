@@ -116,8 +116,9 @@ const accentStyles: Record<Project["accent"], {
 };
 
 const techStackStyles: Record<string, string> = {
-  "Vite": "bg-blue-500/10 text-blue-400 border-blue-500/20",
+  "Vite": "bg-purple-500/10 text-purple-400 border-purple-500/20",
   "Reactjs": "bg-blue-500/10 text-blue-400 border-blue-500/20",
+  "TypeScript": "bg-blue-500/10 text-blue-400 border-blue-500/20",
   "React Three Fiber": "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
   "Tailwind CSS": "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
   "Framer Motion": "bg-purple-500/10 text-purple-400 border-purple-500/20",
