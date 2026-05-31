@@ -17,7 +17,7 @@ const Logo = ({ onClick }: { onClick?: () => void }) => {
       className="flex items-center justify-start md:justify-center gap-2"
     >
       <MelvsteinLogoSvg
-        className="hidden md:flex w-6 h-6 md:w-7 md:h-7 fill-current text-primary"
+        className="flex w-6 h-6 md:w-7 md:h-7 fill-current text-primary"
       />
       <p className="font-heading text-lg md:text-xl font-bold tracking-wider bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
         {App.name}
