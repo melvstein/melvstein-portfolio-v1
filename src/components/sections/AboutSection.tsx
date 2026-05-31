@@ -6,7 +6,8 @@ import Image from "next/image";
 import { NeonGradientCard } from "../ui/neon-gradient-card";
 import { LightRays } from "../ui/light-rays";
 import { FlickeringGrid } from "../ui/flickering-grid";
-import { cn } from "@/lib/utils";
+import { Highlighter } from "@/components/ui/highlighter"
+import { HyperText } from "@/components/ui/hyper-text"
 
 const stats = [
   { icon: Briefcase, label: "Years Experience", value: "8+" },
@@ -36,11 +37,11 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto w-full relative z-10 md:py-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">
+            <HyperText className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">
               About Me
-            </p>
+            </HyperText>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">
-              Developer, builder, lifelong learner
+              Developer, builder, <Highlighter color="var(--primary)">lifelong learner</Highlighter>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
@@ -92,34 +93,34 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="space-y-4 text-foreground text-md md:text-lg leading-relaxed font-light"
+              className="relative flex flex-col items-center justify-center space-y-4 text-foreground text-md md:text-lg leading-relaxed font-light"
             >
               <p>
                 I&apos;m{" "}
-                <span className="text-primary font-medium">Melvin Justine</span>,
+                <Highlighter color="var(--primary)">Melvin Justine</Highlighter>,
                 a Software Developer based in the Philippines with experience
                 building and maintaining production-grade systems in the{" "}
-                <span className="text-secondary font-medium">iGaming</span> and{" "}
-                <span className="text-secondary font-medium">fintech</span>{" "}
+                <Highlighter color="var(--primary)" action="underline">iGaming</Highlighter> and{" "}
+                <Highlighter color="var(--primary)" action="underline">fintech</Highlighter>{" "}
                 space. My work includes legacy system modernization,{" "}
-                <span className="text-secondary font-medium">
+                <Highlighter color="var(--primary)" action="underline">
                   seamless wallet API systems
-                </span>
+                </Highlighter>
                 ,{" "}
-                <span className="text-secondary font-medium">
+                <Highlighter color="var(--primary)" action="underline">
                   iGaming API integrations
-                </span>
+                </Highlighter>
                 ,{" "}
-                <span className="text-secondary font-medium">
+                <Highlighter color="var(--primary)" action="underline">
                   payment API integrations
-                </span>
+                </Highlighter>
                 , RESTful services, and full-stack web applications.
               </p>
               <p>
                 My core stack includes{" "}
-                <span className="text-secondary font-medium">Spring Boot</span>,{" "}
-                <span className="text-secondary font-medium">Laravel</span>, and{" "}
-                <span className="text-secondary font-medium">Next.js</span>,
+                <Highlighter color="var(--primary)" action="underline">Spring Boot</Highlighter>,{" "}
+                <Highlighter color="var(--primary)" action="underline">Laravel</Highlighter>, and{" "}
+                <Highlighter color="var(--primary)" action="underline">Next.js</Highlighter>,
                 with a strong focus on scalable backend architecture, system
                 reliability, and clean API design. I&apos;m experienced in
                 integrating third-party services and building systems that
@@ -128,9 +129,9 @@ const AboutSection = () => {
               <p>
                 I also work with modern frontend technologies and have
                 experience building interactive web experiences using{" "}
-                <span className="text-secondary font-medium">
+                <Highlighter color="var(--primary)" action="underline">
                   React Three Fiber
-                </span>
+                </Highlighter>
                 .
               </p>
             </motion.div>
@@ -143,7 +144,7 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-                  className="rounded-xl border border-primary/10 bg-primary/5 backdrop-blur-xl p-4 space-y-1.5 hover:border-blue-500/30 transition-colors"
+                  className="skin-hover-glow rounded-xl border border-primary/10 bg-primary/5 backdrop-blur-xl p-4 space-y-1.5 hover:border-blue-500/30 transition-colors"
                 >
                   <p className="font-heading text-sm font-semibold text-foreground">
                     {h.title}
@@ -165,7 +166,7 @@ const AboutSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.35, delay: i * 0.06, ease: "backOut" }}
-                    className="rounded-xl border border-primary/10 bg-primary/5 backdrop-blur-xl p-4 flex flex-col items-start gap-2 hover:border-blue-500/30 transition-colors"
+                    className="skin-hover-glow rounded-xl border border-primary/10 bg-primary/5 backdrop-blur-xl p-4 flex flex-col items-start gap-2 hover:border-blue-500/30 transition-colors"
                   >
                     <Icon className="w-5 h-5 text-blue-400" />
                     <p className="font-heading text-2xl font-bold text-muted-foreground">

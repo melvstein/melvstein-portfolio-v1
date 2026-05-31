@@ -169,7 +169,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(70.7% 0.165 254.624);
+  --primary: oklch(62.3% 0.214 259.815);
+  /* --primary: oklch(70.7% 0.165 254.624); */
   /* --primary: oklch(0.443 0.11 240.79); */
   --primary-foreground: oklch(12.9% 0.042 264.695);
   /* --primary-foreground: oklch(0.977 0.013 236.62); */
@@ -219,6 +220,9 @@
 @layer components {
   .skin-bg-gradient {
     @apply bg-linear-to-r from-primary to-secondary;
+  }
+  .skin-hover-glow {
+    @apply hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] transition-shadow;
   }
 }
 

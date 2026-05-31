@@ -8,6 +8,7 @@ import { Icons } from "../Icons";
 import Link from "next/link";
 import { Lens } from "../ui/lens";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { HyperText } from "../ui/hyper-text";
 
 type TechStack = {
   backend?: string[];
@@ -86,11 +87,11 @@ const accentStyles: Record<Project["accent"], {
   title: string;
 }> = {
   blue: {
-    border: "hover:border-blue-500/30",
-    shadow: "hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]",
+    border: "hover:primary/30",
+    shadow: "skin-hover-glow",
     gradient: "from-indigo-950/80 to-slate-900",
-    button: "bg-blue-500",
-    title: "group-hover:text-blue-400",
+    button: "bg-primary",
+    title: "group-hover:text-primary",
   },
   purple: {
     border: "hover:border-purple-500/30",
@@ -169,7 +170,7 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto w-full relative z-10 md:pt-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Featured Work</p>
+            <HyperText className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Featured Work</HyperText>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">Selected Projects</h2>
           </div>
           <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">
@@ -184,7 +185,7 @@ const ProjectsSection = () => {
             return (
               <div
                 key={project.name}
-                className={`group relative flex flex-col backdrop-blur-xl bg-foreground/5 border border-primary/10 rounded-md overflow-hidden transition-all duration-500 ${accent.border} ${accent.shadow}`}
+                className={`group relative flex flex-col backdrop-blur-xl bg-foreground/5 border border-primary/10 rounded-2xl overflow-hidden transition-all duration-500 ${accent.border} ${accent.shadow}`}
               >
                 <Card className="relative w-full h-full flex flex-col shadow-none border-0 bg-transparent rounded-none">
                   <CardHeader>
@@ -212,7 +213,7 @@ const ProjectsSection = () => {
                       <TechStackGroups techStack={project.techStack} />
                     </div>
                   </CardContent>
-                  <CardFooter className="space-x-4">
+                  <CardFooter className="space-x-4 bg-primary/5 border-t border-primary/10">
                     <Link href={project.href} target="_blank" className={`p-3 rounded-full ${accent.button} text-foreground hover:scale-110 transition-transform`}>
                       <ExternalLinkIcon className="w-5 h-5" />
                     </Link>

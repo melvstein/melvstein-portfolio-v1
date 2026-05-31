@@ -3,6 +3,7 @@
 import { Marquee } from "../ui/marquee";
 import { cn } from "@/lib/utils";
 import Skills from "@/data/Skills";
+import { HyperText } from "../ui/hyper-text";
 
 const categoryAccents: Record<keyof typeof Skills, { title: string; glow: string; label: string; border: string }> = {
   backend: {
@@ -40,10 +41,10 @@ const categoryAccents: Record<keyof typeof Skills, { title: string; glow: string
 const SkillsSection = () => {
   return (
     <section id="skills" className="section-container">
-      <div className="max-w-7xl mx-auto w-full relative z-10 md:pt-15">
+      <div className="max-w-7xl mx-auto w-full relative z-10 md:pt-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <p className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Toolkit</p>
+            <HyperText className="text-xs font-heading font-bold text-blue-500 tracking-widest uppercase mb-2">Toolkit</HyperText>
             <h2 className="font-heading text-4xl md:text-5xl font-bold">Skills &amp; Stack</h2>
           </div>
           <p className="text-muted-foreground max-w-md text-sm md:text-base font-light">

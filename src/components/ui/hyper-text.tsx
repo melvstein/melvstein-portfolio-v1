@@ -59,11 +59,15 @@ interface HyperTextProps extends Omit<MotionProps, "children"> {
   animateOnHover?: boolean
   /** Custom character set for scramble effect. Defaults to uppercase alphabet */
   characterSet?: CharacterSet
+  /** Type of character set to use - "binary" or "alphabet" */
+  characterSetType?: "binary" | "alphabet"
 }
 
-const DEFAULT_CHARACTER_SET = Object.freeze(
+const ALPHABET_CHAR_SET = Object.freeze(
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 ) as readonly string[]
+
+const BINARY_CHAR_SET = ["0", "1"] as const
 
 const getRandomInt = (max: number): number => Math.floor(Math.random() * max)
 
@@ -75,9 +79,13 @@ export function HyperText({
   as: Component = "div",
   startOnView = false,
   animateOnHover = true,
-  characterSet = DEFAULT_CHARACTER_SET,
+  characterSet,
+  characterSetType = "binary",
   ...props
 }: HyperTextProps) {
+  const resolvedCharacterSet =
+    characterSet ??
+    (characterSetType === "alphabet" ? ALPHABET_CHAR_SET : BINARY_CHAR_SET)
   const MotionComponent = motionElements[Component] as HyperTextMotionComponent
 
   const [displayText, setDisplayText] = useState<string[]>(() =>
@@ -142,7 +150,7 @@ export function HyperText({
               ? letter
               : index <= iterationCount.current
                 ? children[index]
-                : characterSet[getRandomInt(characterSet.length)]
+                : resolvedCharacterSet[getRandomInt(resolvedCharacterSet.length)]
           )
         )
 
@@ -161,7 +169,7 @@ export function HyperText({
         cancelAnimationFrame(animationFrameId)
       }
     }
-  }, [children, duration, isAnimating, characterSet])
+  }, [children, duration, isAnimating, resolvedCharacterSet])
 
   return (
     <MotionComponent
