@@ -61,7 +61,7 @@ const SkillsSection = () => {
                 <div
                   key={category}
                   className={cn(
-                    "group relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-md overflow-hidden transition-all duration-500",
+                    "group relative backdrop-blur-sm bg-primary/5 border border-primary/10 rounded-md overflow-hidden transition-all duration-500",
                     accent.border
                   )}
                 >
@@ -97,7 +97,7 @@ const SkillsSection = () => {
                         return (
                           <div
                             key={item.name}
-                            className="flex flex-col items-center justify-center gap-2 w-24 h-24 shrink-0 rounded-lg border border-primary/10 bg-foreground/10 hover:bg-primary/70 hover:border-secondary/20 transition-colors"
+                            className="flex flex-col items-center justify-center gap-2 aspect-square w-24 shrink-0 rounded-lg skin-bg"
                           >
                             <Icon className={cn("w-8 h-8", iconClass)} />
                             <span className="text-[10px] font-mono text-foreground text-center px-1 truncate max-w-full">

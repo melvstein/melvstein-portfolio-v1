@@ -60,7 +60,7 @@ const HomeSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="w-full md:w-auto h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
+              className="w-full md:w-auto h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-semibold tracking-wide skin-bg"
             >
               <Link href="#contact">
                 Get in touch
@@ -70,7 +70,7 @@ const HomeSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="w-full md:w-auto h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-medium tracking-wide bg-primary/10 border-secondary/20 text-foreground hover:bg-white/10 hover:text-white backdrop-blur-md transition-all duration-300"
+              className="w-full md:w-auto h-auto px-4 md:px-8 py-4 rounded-xl font-heading font-semibold tracking-wide skin-bg"
             >
               <Link href={LINK.RESUME} target="_blank" rel="noopener noreferrer" download>
                 <Download className="w-4 h-4 mr-2" />

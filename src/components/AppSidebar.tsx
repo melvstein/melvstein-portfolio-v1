@@ -18,6 +18,7 @@ import { Button } from "./ui/button";
 import Logo from "./Logo";
 import Link from "next/link";
 import Menus from "@/data/Menus";
+import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 
 export function AppSidebar() {
   const { toggleSidebar, isMobile } = useSidebar()
@@ -40,7 +41,7 @@ export function AppSidebar() {
           <SidebarMenu>
             {Object.values(Menus.navigation).map((menu) => (
               <SidebarMenuItem key={menu.name}>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton className="hover:bg-primary/10 bg-transparent hover:rounded-none" asChild>
                   <Link href={menu.href} onClick={toggleSidebar}>
                     <span>{menu.name}</span>
                   </Link>
@@ -56,13 +57,21 @@ export function AppSidebar() {
           <div className="flex items-center justify-center gap-4">
             {
               Object.values(Menus.social).map((social) => (
-                <Button key={social.name} variant="ghost" size="icon-sm" className="hover:text-secondary">
+                <Button key={social.name} variant="ghost" size="icon-sm" className="hover:bg-transparent">
                   <Link href={social.url} target="_blank" rel="noopener noreferrer">
                     <social.icon />
                   </Link>
                 </Button>
               ))
             }
+
+            <Button variant="ghost" size="icon-sm" className="hover:bg-transparent">
+              <AnimatedThemeToggler
+                variant="hexagon"
+                className="flex items-center justify-center"
+                fromCenter
+              />
+            </Button>
           </div>
         </SidebarFooter>
         <SidebarRail />

@@ -185,7 +185,7 @@ const ProjectsSection = () => {
             return (
               <div
                 key={project.name}
-                className={`group relative flex flex-col backdrop-blur-xl bg-foreground/5 border border-primary/10 rounded-2xl overflow-hidden transition-all duration-500 ${accent.border} ${accent.shadow}`}
+                className={`group relative flex flex-col skin-bg rounded-2xl overflow-hidden transition-all duration-500 ${accent.border} ${accent.shadow}`}
               >
                 <Card className="relative w-full h-full flex flex-col shadow-none border-0 bg-transparent rounded-none">
                   <CardHeader>

@@ -145,7 +145,7 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-                  className="skin-hover-glow rounded-xl border border-primary/10 bg-primary/5 backdrop-blur-xl p-4 space-y-1.5 hover:border-blue-500/30 transition-colors"
+                  className="rounded-xl p-4 space-y-1.5 skin-bg"
                 >
                   <p className="font-heading text-sm font-semibold text-foreground">
                     {h.title}
@@ -167,7 +167,7 @@ const AboutSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.35, delay: i * 0.06, ease: "backOut" }}
-                    className="skin-hover-glow rounded-xl border border-primary/10 bg-primary/5 backdrop-blur-xl p-4 flex flex-col items-start gap-2 hover:border-blue-500/30 transition-colors"
+                    className="rounded-xl p-4 flex flex-col items-start gap-2 skin-bg"
                   >
                     <Icon className="w-5 h-5 text-blue-400" />
                     <p className="font-heading text-2xl font-bold text-muted-foreground">

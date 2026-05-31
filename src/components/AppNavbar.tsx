@@ -31,7 +31,7 @@ import {
 
 const AppNavbar = () => {
   return (
-    <nav className="fixed z-40 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 bg-slate-950/10 backdrop-blur-sm border-b border-primary/20">
+    <nav className="fixed z-40 top-0 inset-x-0 w-full h-16 flex items-center justify-between px-8 bg-primary/10 backdrop-blur-sm border-b border-primary/20">
         <Logo />
         <DesktopMenus />
         <MobileSidebarMenus />
@@ -128,7 +128,7 @@ export const LetsConnect = ({ onClick }: { onClick?: () => void }) => {
         document.getElementById("contact")?.scrollIntoView();
         onClick?.();
       }}
-      className="flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-primary/30 bg-primary/10 hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)]"
+      className="flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase  skin-bg"
     >
       {"Let's Connect"}
     </Link>

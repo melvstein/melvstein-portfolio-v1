@@ -33,7 +33,7 @@ const AppFloatingDock = () => {
   return (
     <div className="fixed bottom-4 flex items-center justify-center w-full z-50">
       <TooltipProvider>
-        <Dock direction="middle" className="bg-slate-950/10 backdrop-blur-sm border border-primary/20">
+        <Dock direction="middle" className="bg-primary/10 backdrop-blur-sm border border-primary/20">
         {
           data.navbar.map((nav) => (
             <DockIcon key={nav.name} className="hover:bg-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
