@@ -24,7 +24,7 @@ const Experiences: Experience[] = [
       "Designed and optimized RESTful APIs for business systems and integrations.",
       "Integrated third-party APIs enabling real-time bidirectional communication.",
       "Implemented financial features including transfer and wallet systems.",
-      "Developed automated API tests using PHPUnit and Laravel Dusk.",
+      "Developed automated API tests using PHPUnit, Laravel Dusk, Junit, Mockito.",
       "Collaborated with cross-functional teams for scalable solutions.",
       "Managed Docker environments for consistent deployments.",
       "Optimized MySQL databases for performance and integrity.",
